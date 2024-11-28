@@ -75,13 +75,14 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
+
         /* Publications Section */
         .publications-section {
             text-align: center;
             padding: 20px;
             background-color: #f9f9f9;
         }
-
+        
         /* Carousel Container */
         .carousel {
             position: relative;
@@ -90,16 +91,16 @@
             justify-content: center;
             width: 80%;
             margin: 0 auto;
-            overflow: hidden;
+            overflow: hidden; /* Hide overflowing content */
         }
-
+        
         /* Carousel Slides */
         .carousel-slides {
             display: flex;
             transition: transform 0.5s ease-in-out;
             gap: 20px;
         }
-
+        
         /* Individual Publication Card */
         .publication-card {
             flex: 0 0 300px;
@@ -110,25 +111,25 @@
             text-align: center;
             background-color: #fff;
         }
-
+        
         .publication-card img {
             width: 100%;
             height: 200px;
             object-fit: cover;
         }
-
+        
         .publication-card h3 {
             margin: 10px 0;
             font-size: 18px;
             color: #333;
         }
-
+        
         .publication-card p {
             padding: 0 10px;
             font-size: 14px;
             color: #555;
         }
-
+        
         .publication-card a {
             display: block;
             margin: 10px 0;
@@ -136,11 +137,11 @@
             text-decoration: none;
             font-weight: bold;
         }
-
+        
         .publication-card a:hover {
             text-decoration: underline;
         }
-
+        
         /* Navigation Buttons */
         .arrow {
             background-color: #0078d7;
@@ -154,19 +155,18 @@
             z-index: 10;
             transition: background-color 0.3s ease;
         }
-
+        
         .arrow:hover {
             background-color: #005bb5;
         }
-
+        
         .left-arrow {
             left: 10px;
         }
-
+        
         .right-arrow {
             right: 10px;
         }
-
         /* Footer Styles */
         footer {
             background-color: #333;
@@ -217,19 +217,25 @@
 
 <!-- Main Content -->
 <section class="main-content">
+    <!-- About Section -->
     <div class="about" id="about">
         <h2>About Me</h2>
         <p>
-            Hi, I’m Dave Austin, Ph.D., a physicist specializing in computational materials science.
-            I’ve published in renowned journals such as Nature Communications and ACS Nano and presented at APS March Meetings.
+            Hi, I’m Dave Austin, Ph.D., a physicist specializing in computational materials science and passionate about exploring the intricate world of surface phenomena and catalytic reactions. My work combines theoretical insights and advanced modeling techniques to solve challenges in nanotechnology and sustainable energy.
+
+I’ve had the privilege of publishing in renowned journals such as Nature Communications and ACS Nano and presenting at international conferences like the APS March Meeting. My goal is to advance our understanding of material behaviors at the atomic scale and inspire others through science and education.
+
+Feel free to explore my website to learn more about my research, publications, and outreach initiatives. Let’s connect and create meaningful impact together! 
         </p>
     </div>
+
+    <!-- Profile Picture Section -->
     <div class="profile-picture">
         <img src="images/Dave-Austin.jpeg" alt="Profile Picture">
     </div>
 </section>
 
-<!-- Publications Section -->
+
 <section id="publications" class="publications-section">
     <h2>My Publications</h2>
     <div class="carousel">
@@ -247,21 +253,45 @@
         Contact: <a href="mailto:austindi1133@gmail.com">austindi1133@gmail.com</a> |
         Phone: +1-(864)-384-9579 |
         <a href="https://github.com/austindi" target="_blank">GitHub</a> |
-        <a href="https://www.linkedin.com/in/dave-austin-ph-d-616865a9" target="_blank">LinkedIn</a>
+        <a href="www.linkedin.com/in/dave-austin-ph-d-616865a9" target="_blank">LinkedIn</a>
     </p>
 </footer>
+
+<script>
+    const slides = document.querySelector('.carousel-slides');
+    const totalSlides = document.querySelectorAll('.slide').length;
+    let currentIndex = 0;
+
+    function updateCarousel() {
+        const offset = -currentIndex * 320; // 300px width + 20px margin
+        slides.style.transform = `translateX(${offset}px)`;
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateCarousel();
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+    }
+</script>
 
 <script>
     let currentIndex = 0;
 
     async function loadPublications() {
         try {
+            // Fetch the JSON file
             const response = await fetch('publications.json');
             const publications = await response.json();
 
+            // Get the container element
             const container = document.getElementById('publications-container');
             container.innerHTML = ''; // Clear previous content
 
+            // Loop through each publication and create a card
             publications.forEach(pub => {
                 const publicationCard = `
                     <div class="publication-card">
@@ -274,18 +304,20 @@
                 container.innerHTML += publicationCard;
             });
 
-            updateCarousel();
+            // Set initial transform
+            updateCarousel(publications.length);
+
         } catch (error) {
             console.error('Error loading publications:', error);
         }
     }
 
-    function updateCarousel() {
+    function updateCarousel(totalSlides) {
         const container = document.getElementById('publications-container');
-        const totalSlides = document.querySelectorAll('.publication-card').length;
         const offset = -currentIndex * 320; // Adjust based on card width + gap
         container.style.transform = `translateX(${offset}px)`;
 
+        // Optional: Disable buttons at the boundaries
         document.querySelector('.left-arrow').disabled = currentIndex === 0;
         document.querySelector('.right-arrow').disabled = currentIndex === totalSlides - 1;
     }
@@ -294,14 +326,15 @@
         const totalSlides = document.querySelectorAll('.publication-card').length;
         if (currentIndex < totalSlides - 1) {
             currentIndex++;
-            updateCarousel();
+            updateCarousel(totalSlides);
         }
     }
 
     function prevSlide() {
         if (currentIndex > 0) {
             currentIndex--;
-            updateCarousel();
+            const totalSlides = document.querySelectorAll('.publication-card').length;
+            updateCarousel(totalSlides);
         }
     }
 
@@ -311,4 +344,3 @@
 
 </body>
 </html>
-
