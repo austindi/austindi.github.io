@@ -76,73 +76,86 @@
         }
 
 
-        /* Publications Section */
+        /* My Publications Section */
         .publications-section {
             text-align: center;
             padding: 20px;
             background-color: #f9f9f9;
         }
-        
+
+        .publications-section h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
         /* Carousel Container */
         .carousel {
             position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             width: 80%;
             margin: 0 auto;
-            overflow: hidden; /* Hide overflowing content */
+            display: flex;
+            align-items: center;
+            overflow: hidden;
         }
-        
+
         /* Carousel Slides */
         .carousel-slides {
             display: flex;
             transition: transform 0.5s ease-in-out;
-            gap: 20px;
         }
-        
-        /* Individual Publication Card */
-        .publication-card {
+
+
+        .slide {
             flex: 0 0 300px;
+            margin: 10px;
+            text-align: center;
+            background-color: #fff;
             border: 1px solid #ddd;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             overflow: hidden;
-            text-align: center;
-            background-color: #fff;
+            padding: 10px; /* Add padding for spacing */
         }
         
-        .publication-card img {
+        .slide h3 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 10px; /* Space between title and image */
+        }
+        
+/*        .slide img {
             width: 100%;
             height: 200px;
             object-fit: cover;
+            margin-bottom: 10px; 
+        }*/
+
+        .slide img {
+          width: 100%; /* Makes the image span the full width of the container */
+          height: 200px; /* Sets a fixed height for the image */
+          object-fit: cover; /* Ensures the image fills the box while maintaining its aspect ratio */
+           border-radius: 5px; /* Optional: Adds rounded corners */
+           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow effect */
         }
-        
-        .publication-card h3 {
-            margin: 10px 0;
-            font-size: 18px;
-            color: #333;
-        }
-        
-        .publication-card p {
-            padding: 0 10px;
+
+        .slide .summary {
+            padding: 10px;
             font-size: 14px;
             color: #555;
         }
         
-        .publication-card a {
-            display: block;
-            margin: 10px 0;
+        .slide .summary a {
             color: #0078d7;
             text-decoration: none;
             font-weight: bold;
         }
         
-        .publication-card a:hover {
+        .slide .summary a:hover {
             text-decoration: underline;
         }
-        
-        /* Navigation Buttons */
+
+        /* Carousel Arrows */
         .arrow {
             background-color: #0078d7;
             color: white;
@@ -152,20 +165,24 @@
             border-radius: 50%;
             cursor: pointer;
             position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
             z-index: 10;
             transition: background-color 0.3s ease;
         }
         
-        .arrow:hover {
-            background-color: #005bb5;
-        }
-        
+        /* Move the arrows closer to the edges */
         .left-arrow {
-            left: 10px;
+            left: 5px; /* Adjust the distance from the left edge */
         }
         
         .right-arrow {
-            right: 10px;
+            right: 5px; /* Adjust the distance from the right edge */
+        }
+        
+        /* Hover effect */
+        .arrow:hover {
+            background-color: #005bb5;
         }
         /* Footer Styles */
         footer {
@@ -236,13 +253,33 @@ Feel free to explore my website to learn more about my research, publications, a
 </section>
 
 
+<!-- My Publications Section -->
 <section id="publications" class="publications-section">
     <h2>My Publications</h2>
     <div class="carousel">
+        <!-- Left Arrow -->
         <button class="arrow left-arrow" onclick="prevSlide()">&#8592;</button>
-        <div id="publications-container" class="carousel-slides">
-            <!-- Publications will be dynamically loaded here -->
+        <!-- Carousel Slides -->
+         <div class="carousel-slides">
+              <div class="slide">
+                  <h3>A generalized phase resetting method for phase-locked modes prediction</h3> <!-- Title above the image -->
+                  <img src="images/PRC.png" alt="Paper 1">
+                  <div class="summary">
+                      <p>Summary of the paper in a few lines goes here.</p>
+                      <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0174304" target="_blank">Read More</a>
+                  </div>
+              </div>
+              <div class="slide">
+                  <h3>Fine-tuned local coordination environment of Pt single atoms on ceria controls catalytic reactivity</h3> <!-- Title above the image -->
+                  <img src="images/41467_2022_34797_Fig6_HTML.webp" alt="Paper 2">
+                  <div class="summary">
+                      <p>Brief summary or key highlights of this paper.</p>
+                      <a href="https://www.nature.com/articles/s41467-022-34797-2" target="_blank">Read More</a>
+                  </div>
+              </div>
         </div>
+
+        <!-- Right Arrow -->
         <button class="arrow right-arrow" onclick="nextSlide()">&#8594;</button>
     </div>
 </section>
@@ -276,70 +313,6 @@ Feel free to explore my website to learn more about my research, publications, a
         currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
         updateCarousel();
     }
-</script>
-
-<script>
-    let currentIndex = 0;
-
-    async function loadPublications() {
-        try {
-            // Fetch the JSON file
-            const response = await fetch('publications.json');
-            const publications = await response.json();
-
-            // Get the container element
-            const container = document.getElementById('publications-container');
-            container.innerHTML = ''; // Clear previous content
-
-            // Loop through each publication and create a card
-            publications.forEach(pub => {
-                const publicationCard = `
-                    <div class="publication-card">
-                        <img src="${pub.image_url}" alt="${pub.title}">
-                        <h3>${pub.title}</h3>
-                        <p>${pub.summary}</p>
-                        <a href="${pub.link}" target="_blank">Read More</a>
-                    </div>
-                `;
-                container.innerHTML += publicationCard;
-            });
-
-            // Set initial transform
-            updateCarousel(publications.length);
-
-        } catch (error) {
-            console.error('Error loading publications:', error);
-        }
-    }
-
-    function updateCarousel(totalSlides) {
-        const container = document.getElementById('publications-container');
-        const offset = -currentIndex * 320; // Adjust based on card width + gap
-        container.style.transform = `translateX(${offset}px)`;
-
-        // Optional: Disable buttons at the boundaries
-        document.querySelector('.left-arrow').disabled = currentIndex === 0;
-        document.querySelector('.right-arrow').disabled = currentIndex === totalSlides - 1;
-    }
-
-    function nextSlide() {
-        const totalSlides = document.querySelectorAll('.publication-card').length;
-        if (currentIndex < totalSlides - 1) {
-            currentIndex++;
-            updateCarousel(totalSlides);
-        }
-    }
-
-    function prevSlide() {
-        if (currentIndex > 0) {
-            currentIndex--;
-            const totalSlides = document.querySelectorAll('.publication-card').length;
-            updateCarousel(totalSlides);
-        }
-    }
-
-    // Load publications on page load
-    loadPublications();
 </script>
 
 </body>
