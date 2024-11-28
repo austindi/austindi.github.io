@@ -74,6 +74,99 @@
             border-radius: 50%;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
+
+
+        /* My Publications Section */
+        .publications-section {
+            text-align: center;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .publications-section h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* Carousel Container */
+        .carousel {
+            position: relative;
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Carousel Slides */
+        .carousel-slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        /* Individual Slide */
+        .slide {
+            flex: 0 0 300px;
+            margin: 10px;
+            text-align: center;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .slide .summary {
+            padding: 15px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .slide .summary a {
+            color: #0078d7;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .slide .summary a:hover {
+            text-decoration: underline;
+        }
+
+        /* Carousel Arrows */
+        .arrow {
+            background-color: #0078d7;
+            color: white;
+            border: none;
+            font-size: 24px;
+            padding: 10px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            transition: background-color 0.3s ease;
+        }
+
+        .arrow:hover {
+            background-color: #005bb5;
+        }
+
+        .left-arrow {
+            left: 10px;
+        }
+
+        .right-arrow {
+            right: 10px;
+        }
+
         /* Footer Styles */
         footer {
             background-color: #333;
@@ -141,6 +234,41 @@ Feel free to explore my website to learn more about my research, publications, a
         <img src="images/Dave-Austin.jpeg" alt="Profile Picture">
     </div>
 </section>
+
+
+<!-- My Publications Section -->
+<section id="publications" class="publications-section">
+    <h2>My Publications</h2>
+    <div class="carousel">
+        <!-- Left Arrow -->
+        <button class="arrow left-arrow" onclick="prevSlide()">&#8592;</button>
+
+        <!-- Carousel Slides -->
+        <div class="carousel-slides">
+            <!-- Example Publication 1 -->
+            <div class="slide">
+                <img src="images/paper1.jpg" alt="Paper 1">
+                <div class="summary">
+                    <p>Paper Title 1: Summary of the paper in a few lines goes here.</p>
+                    <a href="https://link-to-paper1.com" target="_blank">Read More</a>
+                </div>
+            </div>
+            <!-- Example Publication 2 -->
+            <div class="slide">
+                <img src="images/paper2.jpg" alt="Paper 2">
+                <div class="summary">
+                    <p>Paper Title 2: Brief summary or key highlights of this paper.</p>
+                    <a href="https://link-to-paper2.com" target="_blank">Read More</a>
+                </div>
+            </div>
+            <!-- Add more slides as needed -->
+        </div>
+
+        <!-- Right Arrow -->
+        <button class="arrow right-arrow" onclick="nextSlide()">&#8594;</button>
+    </div>
+</section>
+
 <!-- Footer -->
 <footer>
     <p>
