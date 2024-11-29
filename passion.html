@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Passions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1em 0;
+            text-align: center;
+        }
+        .button-bar {
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+            background-color: #444;
+        }
+        .button-bar button {
+            padding: 10px 15px;
+            margin: 0 5px;
+            font-size: 16px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button-bar button:hover {
+            background-color: #555;
+        }
+        main {
+            padding: 20px;
+        }
+        .image-slider {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+        }
+        .image-slider img {
+            width: 80%;
+            max-height: 500px;
+            border: 2px solid #333;
+            border-radius: 10px;
+        }
+        .controls {
+            margin-top: 10px;
+            text-align: center;
+        }
+        .controls button {
+            padding: 10px 15px;
+            margin: 0 5px;
+            font-size: 16px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .controls button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Passions</h1>
+    </header>
+
+    <!-- Button Bar -->
+    <div class="button-bar">
+        <button onclick="location.href='index.html'">Home</button>
+         <button onclick="location.href='#about'">About Me</button>
+         <button onclick="location.href='#projects'">Projects</button>
+         <button onclick="location.href='passion.html">Passion</button>
+         <button onclick="location.href='#gallery'">Gallery</button>
+         <button onclick="location.href='#blog'">Blog</button>
+    </div>
+
+    <main>
+        <section>
+            <h2>Basketball: A Lifelong Love</h2>
+            <p>I have been passionate about basketball since I was 12 years old. I played AAU basketball for the Spartanburg Bucks for five seasons and participated in local church leagues. In high school, I was a team manager for both varsity and JV basketball teams, as well as a member of the AV team, broadcasting games. I also played intramural basketball in college for three years and continue to play at my local gym.</p>
+        </section>
+
+        <section>
+            <h2>Music: A Harmonious Journey</h2>
+            <p>Music has been a cornerstone of my life. I played the cello from 5th to 12th grade and performed in my high school’s symphony orchestra. I joined the marching band in 11th grade, playing the xylophone and marimba in the pit, and moved to the drumline as a bass drummer in 12th grade. I also participated in the percussion ensemble, took piano lessons in college, and recently started drum lessons and self-teaching the guitar.</p>
+        </section>
+
+        <section>
+            <h2>Billiards: Precision and Strategy</h2>
+            <p>Since 2018, I’ve been passionate about billiards. As an APA member, I enjoy the challenge of strategy and precision in pool. Although I’m an amateur, billiards has become a fulfilling part of my life, offering both relaxation and competition.</p>
+        </section>
+
+        <section class="image-slider">
+            <img id="slider-image" src="placeholder.jpg" alt="My Passion Images">
+        </section>
+        <div class="controls">
+            <button id="prev-btn">Previous</button>
+            <button id="next-btn">Next</button>
+        </div>
+    </main>
+
+    <script>
+        // Variables for images and index
+        let images = [];
+        let currentImageIndex = 0;
+        const sliderImage = document.getElementById('slider-image');
+
+        // Fetch images from passions.json
+        fetch('passions.json')
+            .then(response => response.json())
+            .then(data => {
+                images = data.images; // Assume the JSON contains an array of image URLs
+                if (images.length > 0) {
+                    sliderImage.src = images[currentImageIndex]; // Load the first image
+                }
+            })
+            .catch(error => console.error('Error loading images:', error));
+
+        // Navigate to the previous image
+        document.getElementById('prev-btn').addEventListener('click', () => {
+            if (images.length > 0) {
+                currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+                sliderImage.src = images[currentImageIndex];
+            }
+        });
+
+        // Navigate to the next image
+        document.getElementById('next-btn').addEventListener('click', () => {
+            if (images.length > 0) {
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                sliderImage.src = images[currentImageIndex];
+            }
+        });
+    </script>
+</body>
+</html>
+
