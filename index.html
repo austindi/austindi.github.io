@@ -282,21 +282,7 @@ Feel free to explore my website to learn more about my research, publications, a
         }
     }
 
-    
     function updateCarousel() {
-        const container = document.getElementById('publications-container');
-        const slideWidth = 320; // 300px width + 20px gap
-        const carouselWidth = container.parentElement.offsetWidth; // Width of the carousel container
-        const initialOffset = (carouselWidth - slideWidth) / 2; // Center the first slide
-
-        const offset = -currentIndex * slideWidth + initialOffset;
-        container.style.transform = `translateX(${offset}px)`;
-
-        // Optional: Disable buttons at boundaries
-        document.querySelector('.left-arrow').disabled = currentIndex === 0;
-        document.querySelector('.right-arrow').disabled = currentIndex === document.querySelectorAll('.publication-card').length - 1;
-    }
-    
         const container = document.getElementById('publications-container');
         const totalSlides = document.querySelectorAll('.publication-card').length;
         const offset = -currentIndex * 320; // Adjust based on card width + gap
@@ -322,36 +308,7 @@ Feel free to explore my website to learn more about my research, publications, a
     }
 
     // Load publications on page load
-    
-    async function loadPublications() {
-        try {
-            const response = await fetch('publications.json');
-            const publications = await response.json();
-
-            const container = document.getElementById('publications-container');
-            container.innerHTML = ''; // Clear previous content
-
-            publications.forEach(pub => {
-                const publicationCard = `
-                    <div class="publication-card">
-                        <img src="${pub.image_url}" alt="${pub.title}">
-                        <h3>${pub.title}</h3>
-                        <p>${pub.summary}</p>
-                        <a href="${pub.link}" target="_blank">Read More</a>
-                    </div>
-                `;
-                container.innerHTML += publicationCard;
-            });
-
-            // Call updateCarousel to center the first slide
-            updateCarousel();
-        } catch (error) {
-            console.error('Error loading publications:', error);
-        }
-    }
-
     loadPublications();
-    
 </script>
 
 </body>
