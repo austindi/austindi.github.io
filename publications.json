@@ -12,9 +12,15 @@
         "link": "https://www.nature.com/articles/s41467-022-34797-2"
     },
     {
-        "title": "Paper Title 3",
-        "image_url": "images/paper3.jpg",
-        "summary": "A brief description of the third paper goes here.",
-        "link": "https://link-to-paper3.com"
-    }
+        "title": "Ligand-Coordinated Pt Single-Atom catalyst facilitates Support-Assisted Water-Gas shift reaction",
+        "image_url": "images/Pt_ligand.jpg",
+        "summary": "This study explores how interactions between single metal atoms and their support materials affect catalytic performance in carbon monoxide (CO) oxidation. By focusing on single-atom catalysts, the research uncovers critical insights into optimizing these interactions to boost efficiency. These findings pave the way for innovative catalyst designs with enhanced performance for environmental applications.",
+        "link": "https://www.sciencedirect.com/science/article/pii/S0021951724004366"
+    },
+    {
+         "title": "Increased Selectivity in Photolytic Activation of Nanoassemblies Compared to Thermal Activation in On-Surface Ullmann Coupling",
+         "image_url": "images/Ullmann Coupling.png",
+         "summary": "The study investigates the selectivity of on-surface Ullmann coupling reactions, comparing photolytic (light-induced) activation to traditional thermal activation methods. The research demonstrates that photolytic activation enhances selectivity in forming desired products, offering a more controlled approach to synthesizing complex molecular structures on surfaces. These findings have significant implications for the development of advanced materials and nanostructures, highlighting the potential of light-driven processes in surface chemistry.",
+         "link":"https://pubs.acs.org/doi/full/10.1021/acsnano.3c11509"
+     }
 ]
