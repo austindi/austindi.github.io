@@ -88,22 +88,32 @@
         }*/
 
         .image-slider {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 20px 0;
-            width: 60%; /* Add or adjust width to make the container smaller */
-            max-width: 500px; /* Optionally set a maximum width */
-            border: 2px solid #ccc; /* Optional: Visualize the container */
-            padding: 10px; /* Adjust inner spacing if necessary */
+    display: flex;                /* Flexbox for centering */
+    justify-content: center;      /* Center horizontally */
+    align-items: center;          /* Center vertically */
+    margin: 20px auto;            /* Ensure the element is horizontally centered */
+    width: 60%;                   /* Set the desired width */
+    max-width: 500px;             /* Optional maximum width */
+    border: 2px solid #ccc;       /* Optional: Visualize the container */
+    padding: 10px;                /* Adjust inner spacing if necessary */
+    box-sizing: border-box;       /* Include padding/border in width calculation */
+}
+
+.image-slider img {
+    width: 100%;                  /* Make the image fill the container */
+    max-height: 500px;            /* Prevent the image from growing too tall */
+    border: 2px solid #333;       /* Optional border for the image */
+    border-radius: 10px;          /* Rounded corners */
+}
+
+
+                .page-wrapper {
+            display: flex;                 /* Flexbox for centering */
+            justify-content: center;       /* Horizontal centering */
+            align-items: center;           /* Vertical centering */
+            height: 100vh;                 /* Full viewport height */
         }
 
-        .image-slider img {
-            width: 80%;
-            max-height: 500px;
-            border: 2px solid #333;
-            border-radius: 10px;
-        }
         .controls {
             margin-top: 10px;
             text-align: center;
@@ -206,10 +216,11 @@ As a teaching assistant at UCF, I led laboratory sessions for Introductory Physi
             <h2>Billiards: Precision and Strategy</h2>
             <p>Since 2018, I’ve been passionate about billiards. As an APA member, I enjoy the challenge of strategy and precision in pool. Although I’m an amateur, billiards has become a fulfilling part of my life, offering both relaxation and competition.</p>
         </section>
-
+        <div class="page-wrapper">
         <section class="image-slider">
             <img id="slider-image" src="placeholder.jpg" alt="My Passion Images">
         </section>
+        </div>
         <div class="controls">
             <button id="prev-btn">Previous</button>
             <button id="next-btn">Next</button>
