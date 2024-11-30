@@ -215,15 +215,17 @@
         /* For small screens (e.g., mobile) */
         @media (max-width: 600px) {
     .profile-picture img {
-        max-width: 200px; /* Reduce the max width */
-        height: auto;     /* Maintain aspect ratio */
+        max-width: 200px;      /* Reduce the max width for smaller screens */
+        max-height: 133px;     /* Adjust height proportionally */
+        height: auto;          /* Ensure aspect ratio is maintained */
     }
 }
 
 @media (max-width: 400px) {
     .profile-picture img {
-        max-width: 150px; /* Further reduce the max width */
-        height: auto;     /* Maintain aspect ratio */
+        max-width: 150px;      /* Further reduce the max width for extra-small screens */
+        max-height: 100px;     /* Adjust height proportionally */
+        height: auto;          /* Ensure aspect ratio is maintained */
     }
 }
 /*        @media (max-width: 768px) {
