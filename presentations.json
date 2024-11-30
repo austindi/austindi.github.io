@@ -1,0 +1,31 @@
+{
+    "oral": [
+        {
+            "title": "Advancing Catalysis with Au(111) Surface Modeling",
+            "event": "APS March Meeting",
+            "date": "March 15, 2023",
+            "location": "Las Vegas, NV, USA"
+        },
+        {
+            "title": "Surface Phenomena in Computational Materials Science",
+            "event": "Computational Physics Conference",
+            "date": "October 10, 2022",
+            "location": "Boston, MA, USA"
+        }
+    ],
+    "poster": [
+        {
+            "title": "Atomic-Scale Insights into Catalytic Reactions",
+            "event": "Materials Science Symposium",
+            "date": "June 20, 2022",
+            "location": "San Francisco, CA, USA"
+        },
+        {
+            "title": "DFT Applications in Renewable Energy Research",
+            "event": "Sustainable Energy Conference",
+            "date": "August 5, 2021",
+            "location": "Berlin, Germany"
+        }
+    ]
+}
+
