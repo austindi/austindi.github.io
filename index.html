@@ -337,6 +337,7 @@ Feel free to explore my website to learn more about my research, publications, a
         const cardWidth = document.querySelector('.publication-card').offsetWidth;
         const gap = 20; // Adjust this if your CSS gap changes
         const offset = -currentIndex * (cardWidth + gap);
+        container.style.transform = `translateX(${offset}px)`;
         document.querySelector('.left-arrow').disabled = currentIndex === 0;
         document.querySelector('.right-arrow').disabled = currentIndex === totalSlides - 1;
     }
