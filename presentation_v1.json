@@ -4,73 +4,85 @@
             "title": "Water-Gas Shift Reaction Mechanisms on Ligand Coordinated Pt-Single Atom Catalyst: insights from DFT",
             "date": "November 4, 2024",
             "event": "AVS 70th International Symposium and Exhibition",
-            "location": "Tampa, FL"
+            "location": "Tampa, FL",
+            "authors": "Dave Austin, Duy Le, Talat S. Rahman"
         },
         {
             "title": "Water-Gas Shift Reaction Mechanisms on Ligand Coordinated Pt-Single Atom Catalyst: insights from DFT",
             "date": "November 3, 2024",
             "event": "AVS NSTD Graduate Student Finalist Presentation",
-            "location": "Tampa, FL"
+            "location": "Tampa, FL",
+            "authors": "Dave Austin, Duy Le, Talat S. Rahman"
         },
         {
             "title": "The use of high-performance computers in studying chemical reactions and novel structure formation on surfaces",
             "date": "October 1, 2024",
             "event": "UCF Research Computing Symposium",
-            "location": "Orlando, FL"
+            "location": "Orlando, FL",
+            "authors": "Dave Austin, Duy Le, Talat S. Rahman"
         },
         {
             "title": "The bistable phase of Ph2CN2/Cu(111): revelations from Inelastic Tunneling Spectroscopy and ab initio calculations",
             "date": "March 8, 2024",
             "event": "American Physical Society March Meeting",
-            "location": "Minneapolis, MN"
+            "location": "Minneapolis, MN",
+            "authors": "Dave Austin, Eric D. Switzer, Yunjun Cao, Karina Morgenstern, and Talat S. Rahman"
         },
         {
             "title": "Interplay of the metal surface electronic state and non-covalent molecular bonds in synergistic molecular assembly formation on Au(111)",
             "date": "March 7, 2023",
             "event": "American Physical Society March Meeting",
-            "location": "Las Vegas, NV"
+            "location": "Las Vegas, NV",
+            "authors": "Dave Austin, Duy Le, Sara Lois, Ane Sarasola, Lucia Vitali, Talat Rahman"
         },
         {
             "title": "Interplay of the metal surface electronic state and non-covalent molecular bonds in synergistic molecular assembly formation on Au(111)",
             "date": "March 5, 2023",
             "event": "American Physical Society Bridge Symposium",
-            "location": "Las Vegas, NV"
+            "location": "Las Vegas, NV",
+            "authors": "Dave Austin, Duy Le, Sara Lois, Ane Sarasola, Lucia Vitali, Talat Rahman"
         },
         {
             "title": "Determination of Location of Pt Single Atom Catalyst on the Ce2O(110) Surface: first principles investigation",
             "date": "March 22, 2022",
             "event": "American Chemical Society March Meeting",
-            "location": "San Diego, CA"
+            "location": "San Diego, CA",
+            "authors": "Dave Austin, Duy Le, and Talat S. Rahman"
         },
         {
             "title": "CO vibrational frequencies as probe of Pt local environment in Pt1/CeO2 single-atom catalysts: First-principles investigations",
             "date": "March 17, 2022",
             "event": "American Physical Society March Meeting",
-            "location": "Chicago, IL"
+            "location": "Chicago, IL",
+            "authors": "Dave Austin, Duy Le, Shaohua Xie, Sampyo Hong, Fudong Liu, and Talat S. Rahman"
         },
         {
             "title": "Predicting the Phase Response Curve for Individual Neurons in Network",
             "date": "April 17, 2018",
             "event": "CofC Department of Physics and Astronomy",
-            "location": "Charleston, SC"
+            "location": "Charleston, SC",
+            "authors": "Dave Austin, Sorinel Oprisan"
         },
         {
             "title": "A Generalized Phase Resetting Method for Phase-Locked Modes Prediction",
             "date": "March 25, 2017",
             "event": "South Carolina Academy of Science Annual Meeting",
-            "location": "Conway, SC"
+            "location": "Conway, SC",
+            "authors": "Dave Austin, Sorinel Oprisan"
         },
         {
             "title": "A Generalized Phase Resetting Method for Phase-Locked Modes Prediction",
             "date": "February 10, 2017",
             "event": "Neuropalooza, MUSC",
-            "location": "Charleston, SC"
+            "location": "Charleston, SC",
+            "authors": "Dave Austin, Sorinel Oprisan"
         },
         {
             "title": "A Generalized Phase Resetting Method for Phase-Locked Modes Prediction",
             "date": "September 27, 2016",
             "event": "CofC Department of Physics and Astronomy",
-            "location": "Charleston, SC"
+            "location": "Charleston, SC",
+            "authors": "Dave Austin, Sorinel Oprisan"
         }
     ],
     "poster": [
