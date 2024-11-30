@@ -164,6 +164,10 @@
         <p>© 2024 My Website. All rights reserved.</p>
     </footer>
     <script> // Function to load and display presentations
+       
+
+
+
 async function loadPresentations() {
     try {
         const response = await fetch('presentations.json'); // Fetch data from JSON
@@ -173,13 +177,13 @@ async function loadPresentations() {
         const posterContainer = document.querySelector('#poster-presentations .presentation-list');
 
         // Populate Oral Presentations
-        presentations.oral.forEach(presentation => {
+        presentations["Oral Presentations"].forEach(presentation => {
             const item = createPresentationItem(presentation);
             oralContainer.appendChild(item);
         });
 
         // Populate Poster Presentations
-        presentations.poster.forEach(presentation => {
+        presentations["Poster Presentations"].forEach(presentation => {
             const item = createPresentationItem(presentation);
             posterContainer.appendChild(item);
         });
@@ -187,6 +191,7 @@ async function loadPresentations() {
         console.error('Error loading presentations:', error);
     }
 }
+
 
 // Helper function to create a presentation item
 function createPresentationItem(presentation) {
@@ -205,12 +210,18 @@ function createPresentationItem(presentation) {
     const location = document.createElement('span');
     location.textContent = `Location: ${presentation.location}`;
 
+    const authors = document.createElement('p');
+    authors.textContent = `Authors: ${presentation.authors}`;
+
     item.appendChild(title);
     item.appendChild(event);
     item.appendChild(date);
     item.appendChild(location);
+    item.appendChild(authors);
 
     return item;
+}
+
 }
 
 // Load presentations on page load
