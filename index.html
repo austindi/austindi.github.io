@@ -78,6 +78,7 @@
             width: 100%;
             max-width: 300px;
             height: auto;
+            display: block;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
@@ -209,16 +210,17 @@
             }
         }
         /* For small screens (e.g., mobile) */
-@media (max-width: 600px) {
+        @media (max-width: 600px) {
     .profile-picture img {
         max-width: 200px; /* Reduce the max width */
+        height: auto;     /* Maintain aspect ratio */
     }
 }
 
-/* For very small screens (e.g., extra small devices) */
 @media (max-width: 400px) {
     .profile-picture img {
         max-width: 150px; /* Further reduce the max width */
+        height: auto;     /* Maintain aspect ratio */
     }
 }
     </style>
