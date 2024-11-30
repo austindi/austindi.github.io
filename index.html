@@ -95,8 +95,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 80%;
+            width: 100%;
             margin: 0 auto;
+            box-sizing: border-box;
             overflow: hidden;
         }
 
@@ -104,6 +105,8 @@
         .carousel-slides {
             display: flex;
             transition: transform 0.5s ease-in-out;
+             flex-wrap: nowrap;            /* Prevent wrapping of slides */
+             justify-content: center;
             gap: 20px;
         }
 
@@ -161,6 +164,7 @@
             position: absolute;
             z-index: 10;
             transition: background-color 0.3s ease;
+            top: 50%; 
         }
 
         .arrow:hover {
@@ -221,6 +225,26 @@
     .profile-picture img {
         max-width: 150px; /* Further reduce the max width */
         height: auto;     /* Maintain aspect ratio */
+    }
+}
+        @media (max-width: 768px) {
+    .carousel-slides {
+        gap: 10px;                /* Reduce space between slides */
+    }
+
+    .publication-card {
+        flex: 0 0 250px;          /* Make cards smaller */
+    }
+}
+
+@media (max-width: 480px) {
+    .publication-card {
+        flex: 0 0 200px;          /* Further reduce card size */
+    }
+
+    .arrow {
+        font-size: 18px;          /* Smaller arrows for small screens */
+        padding: 8px 12px;        /* Adjust arrow size */
     }
 }
     </style>
@@ -308,9 +332,11 @@ Feel free to explore my website to learn more about my research, publications, a
     function updateCarousel() {
         const container = document.getElementById('publications-container');
         const totalSlides = document.querySelectorAll('.publication-card').length;
-        const offset = -currentIndex * 320; // Adjust based on card width + gap
-        container.style.transform = `translateX(${offset}px)`;
-
+        //const offset = -currentIndex * 320; // Adjust based on card width + gap
+        //container.style.transform = `translateX(${offset}px)`;
+        const cardWidth = document.querySelector('.publication-card').offsetWidth;
+        const gap = 20; // Adjust this if your CSS gap changes
+        const offset = -currentIndex * (cardWidth + gap);
         document.querySelector('.left-arrow').disabled = currentIndex === 0;
         document.querySelector('.right-arrow').disabled = currentIndex === totalSlides - 1;
     }
