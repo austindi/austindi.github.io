@@ -207,11 +207,15 @@ function createPresentationItem(presentation) {
     const location = document.createElement('span');
     location.textContent = `Location: ${presentation.location}`;
 
+    const author = document.createElement('p');
+    author.textContent = `Authors: ${presentation.authors}`;
+
     item.appendChild(title);
     item.appendChild(event);
     item.appendChild(date);
     item.appendChild(location);
-
+    item.appendChild(author);
+    
     return item;
 }
 
