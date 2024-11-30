@@ -107,20 +107,27 @@
 }
 
 
-                .page-wrapper {
+            .page-wrapper {
+            flex-direction: column;
             display: flex;                 /* Flexbox for centering */
             justify-content: center;       /* Horizontal centering */
             align-items: center;           /* Vertical centering */
             height: 100vh;                 /* Full viewport height */
+            gap: 15px;
         }
 
         .controls {
-            margin-top: 10px;
-            text-align: center;
+            /*margin-top: 10px;*/
+            gap: 10px;                     /* Space between buttons */
+            margin: 0;                     /* Remove default margin */
+            padding: 0;
+            /*text-align: center;*/
+            display: flex;                 /* Flexbox for button alignment */
+            justify-content: center;
         }
         .controls button {
             padding: 10px 15px;
-            margin: 0 5px;
+            /*margin: 0 5px;*/
             font-size: 16px;
             background-color: #333;
             color: #fff;
