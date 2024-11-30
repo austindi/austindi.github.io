@@ -17,7 +17,7 @@
             padding: 1em 0;
             text-align: center;
         }
-        .button-bar {
+/*        .button-bar {
             display: flex;
             justify-content: center;
             padding: 10px 0;
@@ -35,6 +35,28 @@
         }
         .button-bar button:hover {
             background-color: #555;
+        }*/
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #333;
+            padding: 10px 0;
+        }
+
+        .navbar button {
+            background-color: #0078d7;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar button:hover {
+            background-color: #005bb5;
         }
         main {
             padding: 20px;
@@ -80,6 +102,20 @@
         .controls button:hover {
             background-color: #555;
         }
+         /* Responsive Adjustments */
+         @media (max-width: 768px) {
+             .navbar {
+                 flex-wrap: wrap;
+                 justify-content: center;
+             }
+
+             .navbar button {
+                 margin: 5px;
+             }
+
+             .main-content {
+                 flex-direction: column;
+
     </style>
 </head>
 <body>
@@ -88,14 +124,23 @@
     </header>
 
     <!-- Button Bar -->
-    <div class="button-bar">
+ <!--   <div class="button-bar">
         <button onclick="location.href='index.html'">Home</button>
          <button onclick="location.href='#about'">About Me</button>
          <button onclick="location.href='#projects'">Projects</button>
          <button onclick="location.href='passion.html">Passion</button>
          <button onclick="location.href='#gallery'">Gallery</button>
          <button onclick="location.href='#blog'">Blog</button>
-    </div>
+ </div> --> 
+ <!-- Navigation Bar -->
+ <nav class="navbar">
+     <button onclick="location.href='index.html'">Home</button>
+     <button onclick="location.href='#about'">About Me</button>
+     <button onclick="location.href='#projects'">Projects</button>
+     <button onclick="location.href='passion.html'">Passion</button>
+     <button onclick="location.href='#gallery'">Gallery</button>
+     <button onclick="location.href='#blog'">Blog</button>
+ </nav>
 
     <main>
         <section>
