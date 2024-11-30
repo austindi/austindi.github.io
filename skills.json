@@ -1,0 +1,28 @@
+[
+    {
+        "name": "Python Programming",
+        "description": "Developed expertise in Python over 8 years, focusing on data analysis, visualization, and computational modeling.",
+        "experience": 8
+    },
+    {
+        "name": "Shell Scripting",
+        "description": "Automated data processing pipelines using shell scripting to improve efficiency in HPC workflows.",
+        "experience": 7
+    },
+    {
+        "name": "High-Performance Computing (HPC)",
+        "description": "Utilized HPC environments to perform large-scale simulations and data analysis for materials science research.",
+        "experience": 7
+    },
+    {
+        "name": "SQL Databases",
+        "description": "Self-taught SQL and used it to manage and query structured data in research projects.",
+        "experience": 3
+    },
+    {
+        "name": "Machine Learning",
+        "description": "Acquired knowledge in machine learning theory and applied techniques during undergraduate computational neuroscience research.",
+        "experience": 2
+    }
+]
+

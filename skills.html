@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Skills</title>
+<style> 
+/* Skills Section */
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.skill-card {
+    flex: 1 1 300px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.skill-card h3 {
+    margin: 10px 0;
+    font-size: 20px;
+    color: #333;
+}
+
+.skill-card p {
+    font-size: 16px;
+    color: #555;
+}
+
+.skill-card span {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #0078d7;
+}
+      body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1em 0;
+            text-align: center;
+        }
+/*        .button-bar {
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+            background-color: #444;
+        }
+        .button-bar button {
+            padding: 10px 15px;
+            margin: 0 5px;
+            font-size: 16px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button-bar button:hover {
+            background-color: #555;
+        }*/
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #333;
+            padding: 10px 0;
+        }
+
+        .navbar button {
+            background-color: #0078d7;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .navbar button:hover {
+            background-color: #005bb5;
+        }
+        main {
+            padding: 20px;
+        }
+          /* Responsive Adjustments */
+         @media (max-width: 768px) {
+             .navbar {
+                 flex-wrap: wrap;
+                 justify-content: center;
+             }
+
+             .navbar button {
+                 margin: 5px;
+             }
+
+             .main-content {
+                 flex-direction: column;
+
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <button onclick="location.href='index.html'">Home</button>
+        <button onclick="location.href='#about'">About Me</button>
+        <button onclick="location.href='#projects'">Projects</button>
+        <button onclick="location.href='passion.html'">Passion</button>
+        <button onclick="location.href='skills.html'">Skills</button>
+        <button onclick="location.href='#blog'">Blog</button>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <section>
+            <h1>My Skills</h1>
+            <div id="skills-container" class="skills-list">
+                <!-- Skills will be dynamically loaded here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            Contact: <a href="mailto:austindi1133@gmail.com">austindi1133@gmail.com</a> |
+            Phone: +1-(864)-384-9579 |
+            <a href="https://github.com/austindi" target="_blank">GitHub</a> |
+            <a href="https://www.linkedin.com/in/dave-austin-ph-d-616865a9" target="_blank">LinkedIn</a>
+        </p>
+    </footer>
+    <script>
+        // Fetch and Display Skills
+async function loadSkills() {
+    try {
+        const response = await fetch('skills.json'); // Replace with your API endpoint if needed
+        const skills = await response.json();
+
+        const skillsContainer = document.getElementById('skills-container');
+        skillsContainer.innerHTML = ''; // Clear previous content
+
+        skills.forEach(skill => {
+            const skillCard = `
+                <div class="skill-card">
+                    <h3>${skill.name}</h3>
+                    <p>${skill.description}</p>
+                    <span>Experience: ${skill.experience} years</span>
+                </div>
+            `;
+            skillsContainer.innerHTML += skillCard;
+        });
+    } catch (error) {
+        console.error('Error loading skills:', error);
+    }
+}
+
+// Load skills on page load (only for skills.html)
+if (document.getElementById('skills-container')) {
+    loadSkills();
+}
+
+    </script>
+</body>
+</html>
+
