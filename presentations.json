@@ -1,5 +1,5 @@
 {
-    "Oral Presentations": [
+    "oral": [
         {
             "Title": "Water-Gas Shift Reaction Mechanisms on Ligand Coordinated Pt-Single Atom Catalyst: insights from DFT",
             "Date": "November 4, 2024",
@@ -85,7 +85,7 @@
             "Authors": "Dave Austin, Sorinel Oprisan"
         }
     ],
-    "Poster Presentations": [
+    "poster": [
         {
             "Title": "Ligand Coordinated Pt Single-Atom Catalyst Allows Heteroatom Bond Formation During Water-Gas Shift Reaction",
             "Date": "September 27, 2023",
