@@ -117,17 +117,12 @@
         }
 
         .controls {
-            /*margin-top: 10px;*/
             gap: 10px;                     /* Space between buttons */
-            margin: 0;                     /* Remove default margin */
-            padding: 0;
-            /*text-align: center;*/
             display: flex;                 /* Flexbox for button alignment */
             justify-content: center;
         }
         .controls button {
             padding: 5px 15px;
-            /*margin: 0 5px;*/
             font-size: 16px;
             background-color: #333;
             color: #fff;
@@ -155,7 +150,7 @@
          /* Responsive Adjustments */
 @media (max-width: 768px) {
     .page-wrapper {
-        gap: 4px;                /* Reduce spacing between image and buttons */
+        gap: 8px;                /* Reduce spacing between image and buttons */
     }
 
     .controls button {
@@ -165,8 +160,8 @@
 }
 
 @media (max-width: 480px) {
-    .page-wrapper {
-        gap: 3px;                 /* Further reduce spacing */
+    .page-wraper {
+        gap: 5px;                 /* Further reduce spacing */
     }
 
     .controls button {
@@ -249,10 +244,10 @@ As a teaching assistant at UCF, I led laboratory sessions for Introductory Physi
         <section class="image-slider">
             <img id="slider-image" src="placeholder.jpg" alt="My Passion Images">
         </section>
-        </div>
         <div class="controls">
             <button id="prev-btn">Previous</button>
             <button id="next-btn">Next</button>
+        </div>
         </div>
     </main>
      <footer>
