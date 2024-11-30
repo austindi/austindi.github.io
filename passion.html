@@ -113,7 +113,7 @@
             justify-content: center;       /* Horizontal centering */
             align-items: center;           /* Vertical centering */
             height: 100vh;                 /* Full viewport height */
-            gap: 15px;
+            gap: 10px;
         }
 
         .controls {
@@ -152,6 +152,28 @@
              .main-content {
                  flex-direction: column;
                   }}
+         /* Responsive Adjustments */
+@media (max-width: 768px) {
+    .page-wrapper {
+        gap: 10px;                /* Reduce spacing between image and buttons */
+    }
+
+    .controls button {
+        font-size: 14px;          /* Reduce button text size */
+        padding: 5px 10px;        /* Adjust button padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .page-wrapper {
+        gap: 8px;                 /* Further reduce spacing */
+    }
+
+    .controls button {
+        font-size: 12px;          /* Smaller button text */
+        padding: 4px 8px;         /* Adjust button size for smaller screens */
+    }
+}
 
     </style>
 </head>
