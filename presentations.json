@@ -1,31 +1,209 @@
 {
-    "oral": [
+    "Oral Presentations": [
         {
-            "title": "Advancing Catalysis with Au(111) Surface Modeling",
-            "event": "APS March Meeting",
-            "date": "March 15, 2023",
-            "location": "Las Vegas, NV, USA"
+            "Title": "Water-Gas Shift Reaction Mechanisms on Ligand Coordinated Pt-Single Atom Catalyst: insights from DFT",
+            "Date": "November 4, 2024",
+            "Event": "AVS 70th International Symposium and Exhibition",
+            "Location": "Tampa, FL",
+            "Authors": "Dave Austin, Duy Le, Talat S. Rahman"
         },
         {
-            "title": "Surface Phenomena in Computational Materials Science",
-            "event": "Computational Physics Conference",
-            "date": "October 10, 2022",
-            "location": "Boston, MA, USA"
+            "Title": "Water-Gas Shift Reaction Mechanisms on Ligand Coordinated Pt-Single Atom Catalyst: insights from DFT",
+            "Date": "November 3, 2024",
+            "Event": "AVS NSTD Graduate Student Finalist Presentation",
+            "Location": "Tampa, FL",
+            "Authors": "Dave Austin, Duy Le, Talat S. Rahman"
+        },
+        {
+            "Title": "The use of high-performance computers in studying chemical reactions and novel structure formation on surfaces",
+            "Date": "October 1, 2024",
+            "Event": "UCF Research Computing Symposium",
+            "Location": "Orlando, FL",
+            "Authors": "Dave Austin, Duy Le, Talat S. Rahman"
+        },
+        {
+            "Title": "The bistable phase of Ph2CN2/Cu(111): revelations from Inelastic Tunneling Spectroscopy and ab initio calculations",
+            "Date": "March 8, 2024",
+            "Event": "American Physical Society March Meeting",
+            "Location": "Minneapolis, MN",
+            "Authors": "Dave Austin, Eric D. Switzer, Yunjun Cao, Karina Morgenstern, and Talat S. Rahman"
+        },
+        {
+            "Title": "Interplay of the metal surface electronic state and non-covalent molecular bonds in synergistic molecular assembly formation on Au(111)",
+            "Date": "March 7, 2023",
+            "Event": "American Physical Society March Meeting",
+            "Location": "Las Vegas, NV",
+            "Authors": "Dave Austin, Duy Le, Sara Lois, Ane Sarasola, Lucia Vitali, Talat Rahman"
+        },
+        {
+            "Title": "Interplay of the metal surface electronic state and non-covalent molecular bonds in synergistic molecular assembly formation on Au(111)",
+            "Date": "March 5, 2023",
+            "Event": "American Physical Society Bridge Symposium",
+            "Location": "Las Vegas, NV",
+            "Authors": "Dave Austin, Duy Le, Sara Lois, Ane Sarasola, Lucia Vitali, Talat Rahman"
+        },
+        {
+            "Title": "Determination of Location of Pt Single Atom Catalyst on the Ce2O(110) Surface: first principles investigation",
+            "Date": "March 22, 2022",
+            "Event": "American Chemical Society March Meeting",
+            "Location": "San Diego, CA",
+            "Authors": "Dave Austin, Duy Le, and Talat S. Rahman"
+        },
+        {
+            "Title": "CO vibrational frequencies as probe of Pt local environment in Pt1/CeO2 single-atom catalysts: First-principles investigations",
+            "Date": "March 17, 2022",
+            "Event": "American Physical Society March Meeting",
+            "Location": "Chicago, IL",
+            "Authors": "Dave Austin, Duy Le, Shaohua Xie, Sampyo Hong, Fudong Liu, and Talat S. Rahman"
+        },
+        {
+            "Title": "Predicting the Phase Response Curve for Individual Neurons in Network",
+            "Date": "April 17, 2018",
+            "Event": "CofC Department of Physics and Astronomy",
+            "Location": "Charleston, SC",
+            "Authors": "Dave Austin, Sorinel Oprisan"
+        },
+        {
+            "Title": "A Generalized Phase Resetting Method for Phase-Locked Modes Prediction",
+            "Date": "March 25, 2017",
+            "Event": "South Carolina Academy of Science Annual Meeting",
+            "Location": "Conway, SC",
+            "Authors": "Dave Austin, Sorinel Oprisan"
+        },
+        {
+            "Title": "A Generalized Phase Resetting Method for Phase-Locked Modes Prediction",
+            "Date": "February 10, 2017",
+            "Event": "Neuropalooza, MUSC",
+            "Location": "Charleston, SC",
+            "Authors": "Dave Austin, Sorinel Oprisan"
+        },
+        {
+            "Title": "A Generalized Phase Resetting Method for Phase-Locked Modes Prediction",
+            "Date": "September 27, 2016",
+            "Event": "CofC Department of Physics and Astronomy",
+            "Location": "Charleston, SC",
+            "Authors": "Dave Austin, Sorinel Oprisan"
         }
     ],
-    "poster": [
+    "Poster Presentations": [
         {
-            "title": "Atomic-Scale Insights into Catalytic Reactions",
-            "event": "Materials Science Symposium",
-            "date": "June 20, 2022",
-            "location": "San Francisco, CA, USA"
+            "Title": "Ligand Coordinated Pt Single-Atom Catalyst Allows Heteroatom Bond Formation During Water-Gas Shift Reaction",
+            "Date": "September 27, 2023",
+            "Event": "796 WE-Heraeus-Seminar",
+            "Location": "Bad Honnef, Germany",
+            "Authors": "Dave Austin, Fereshteh Rezvani, Duy Le, Talat S. Rahman, Steven L. Tait"
         },
         {
-            "title": "DFT Applications in Renewable Energy Research",
-            "event": "Sustainable Energy Conference",
-            "date": "August 5, 2021",
-            "location": "Berlin, Germany"
+            "Title": "Ligand Coordinated Pt Single-Atom Catalyst for Hydrogen Production",
+            "Date": "July 24, 2023",
+            "Event": "Dynamics at Surfaces Gordon Research Conference",
+            "Location": "New Port, RI",
+            "Authors": "Dave Austin, Fereshteh Rezvani, Duy Le, Talat S. Rahman, Steven L. Tait"
+        },
+        {
+            "Title": "Science & Technology of Emerging Materials Symposium",
+            "Date": "March 16, 2023",
+            "Event": "Science & Technology of Emerging Materials Symposium",
+            "Location": "Orlando, FL",
+            "Authors": "Dave Austin, Duy Le, Sara Lois, Ane Sarasola, Lucia Vitali, Talat Rahman"
+        },
+        {
+            "Title": "Florida Prison Education Project - Physics and Everyday Thinking",
+            "Date": "January 20, 2020",
+            "Event": "AAPT Winter Conference",
+            "Location": "Orlando, FL",
+            "Authors": "Dave Austin, Nicholas Cox, Stephanie Jarmak, Justin Reyes, Michael Chini, Williams Kaden, Ahlam Al-Rawi, Mihai Vaida"
+        },
+        {
+            "Title": "A Generalized Phase Resetting Method for Phase-Locked Modes Prediction",
+            "Date": "July 15, 2018",
+            "Event": "CNS - Organization for Computational Neurosciences",
+            "Location": "Seattle, WA",
+            "Authors": "Dave Austin, Sorinel Oprisan"
+        },
+        {
+            "Title": "Predicting the Phase Response Curve for Individual Neurons in Network",
+            "Date": "April 12, 2018",
+            "Event": "School of Sciences and Mathematics Research Poster Session",
+            "Location": "Charleston, SC",
+            "Authors": "Dave Austin, Sorinel Oprisan"
+        },
+        {
+            "Title": "A Generalized Phase Resetting Method for Phase-Locked Modes Prediction",
+            "Date": "November 11, 2017",
+            "Event": "Neuroscience 2017",
+            "Location": "Washington, D.C.",
+            "Authors": "Dave Austin, Sorinel Oprisan"
+        },
+        {
+            "Title": "Predicting the Phase Response Curve for a Neuronal Network",
+            "Date": "August 25, 2017",
+            "Event": "Celebration of Summer Scholars",
+            "Location": "Charleston, SC",
+            "Authors": "Dave Austin, Sorinel Oprisan"
+        },
+        {
+            "Title": "A Generalized Phase Resetting Method for Phase-Locked Modes Prediction",
+            "Date": "April 20, 2017",
+            "Event": "School of Sciences and Mathematics Research Poster Session",
+            "Location": "Charleston, SC",
+            "Authors": "Dave Austin, Sorinel Oprisan"
+        },
+        {
+            "Title": "A Generalized Phase Resetting Method for Phase-Locked Modes Prediction",
+            "Date": "March 27, 2017",
+            "Event": "Frontiers in Neuroscience",
+            "Location": "Charleston, SC",
+            "Authors": "Dave Austin, Sorinel Oprisan"
+        },
+        {
+            "Title": "A Generalized Phase Resetting Method for Phase-Locked Modes Prediction",
+            "Date": "August 22, 2016",
+            "Event": "Celebration of Summer Scholars",
+            "Location": "Charleston, SC",
+            "Authors": "Dave Austin, Sorinel Oprisan"
+        },
+        {
+            "Title": "A Generalized Phase Resetting Method for Phase-Locked Modes Prediction",
+            "Date": "August 22, 2016",
+            "Event": "SCAS-AAPT Fall Conference",
+            "Location": "Florence, SC",
+            "Authors": "Dave Austin, Sorinel Oprisan"
+        },
+        {
+            "Title": "Nonlinear Effects of Stimuli on Phase Response Curves",
+            "Date": "April 16, 2016",
+            "Event": "South Carolina Academy of Science Annual Meeting",
+            "Location": "Rock Hill, SC",
+            "Authors": "Dave Austin, Sorinel Oprisan"
+        },
+        {
+            "Title": "Nonlinear Effects of Stimuli on Phase Response Curves",
+            "Date": "April 14, 2016",
+            "Event": "School of Sciences and Mathematics Research Poster Session",
+            "Location": "Charleston, SC",
+            "Authors": "Dave Austin, Sorinel Oprisan"
+        },
+        {
+            "Title": "Nonlinear Effects of Stimuli on Phase Response Curves",
+            "Date": "April 4, 2016",
+            "Event": "Frontiers in Neuroscience",
+            "Location": "Charleston, SC",
+            "Authors": "Dave Austin, Sorinel Oprisan"
+        },
+        {
+            "Title": "Nonlinear Effects of Stimuli on Phase Response Curves",
+            "Date": "February 5, 2016",
+            "Event": "Neuropalooza, MUSC",
+            "Location": "Charleston, SC",
+            "Authors": "Dave Austin, Sorinel Oprisan"
+        },
+        {
+            "Title": "Nonlinear Effects of Stimuli on Phase Response Curves",
+            "Date": "August 24, 2015",
+            "Event": "Celebration of Summer Scholars",
+            "Location": "Charleston, SC",
+            "Authors": "Dave Austin, Sorinel Oprisan"
         }
     ]
 }
-
