@@ -3,37 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matplotlib in PyScript</title>
+    <title>Matplotlib Preloaded in PyScript</title>
     <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css">
     <script defer src="https://pyscript.net/latest/pyscript.js"></script>
 </head>
 <body>
-    <h1>Matplotlib Plot in PyScript</h1>
+    <h1>Preloaded Matplotlib Plot in PyScript</h1>
+
+    <py-env>
+        - matplotlib
+    </py-env>
 
     <py-script>
-        import micropip
+        import matplotlib.pyplot as plt
 
-        async def plot_graph():
-            # Install Matplotlib
-            await micropip.install("matplotlib")
+        # Create a bar chart
+        plt.bar(["A", "B", "C", "D"], [5, 7, 3, 8], color="blue")
+        plt.xlabel("Categories")
+        plt.ylabel("Values")
+        plt.title("Bar Chart Example")
 
-            # Import Matplotlib and create a simple plot
-            import matplotlib.pyplot as plt
-
-            # Create the plot
-            plt.figure()
-            plt.plot([1, 2, 3, 4], [10, 20, 25, 30], label='Line 1')
-            plt.xlabel("X-axis")
-            plt.ylabel("Y-axis")
-            plt.title("Simple Line Plot")
-            plt.legend()
-
-            # Save and display the plot
-            plt.savefig("plot.png")  # Save the plot
-            plt.show()  # Render the plot inline (works in supported PyScript environments)
-
-        # Execute the plotting function
-        plot_graph()
+        # Display the plot
+        plt.show()
     </py-script>
 </body>
 </html>
