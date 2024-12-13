@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantitative Portfolio Optimization and Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        p {
+            margin: 10px 0;
+        }
+        .equation {
+            background: #ecf0f1;
+            border-left: 4px solid #3498db;
+            padding: 10px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>Quantitative Portfolio Optimization and Management</h1>
+    <p>This collection of projects demonstrates key concepts and methods in portfolio optimization and management, focusing on:</p>
+    <ol>
+        <li>Efficient Frontier Construction: Understanding the risk-return tradeoff.</li>
+        <li>Sharpe Ratio: Measuring risk-adjusted returns.</li>
+        <li>Optimizing Sharpe Ratio: Finding the best portfolio weights.</li>
+        <li>Rebalancing: Maintaining portfolio alignment over time.</li>
+    </ol>
+    <p>These projects integrate modern portfolio theory (MPT), optimization techniques, and risk management practices, laying the foundation for quantitative finance.</p>
+
+    <h2>1. Efficient Frontier</h2>
+    <p>The <strong>efficient frontier</strong> represents a set of portfolios that achieve the highest possible return for a given level of risk.</p>
+    <div class="equation">
+        Portfolio Return: E(R<sub>p</sub>) = Σ w<sub>i</sub> ⋅ E(R<sub>i</sub>)
+    </div>
+    <div class="equation">
+        Portfolio Variance: σ<sub>p</sub><sup>2</sup> = ΣΣ w<sub>i</sub> ⋅ w<sub>j</sub> ⋅ Cov(R<sub>i</sub>, R<sub>j</sub>)
+    </div>
+    <p>Steps:</p>
+    <ul>
+        <li>Calculate expected returns (E(R<sub>i</sub>)) and the covariance matrix (Cov(R<sub>i</sub>, R<sub>j</sub>)).</li>
+        <li>Optimize portfolio weights for each target return to minimize risk.</li>
+        <li>Plot risk vs. return to create the frontier.</li>
+    </ul>
+
+    <h2>2. Sharpe Ratio</h2>
+    <p>The <strong>Sharpe Ratio</strong> measures risk-adjusted performance, helping compare portfolios.</p>
+    <div class="equation">
+        Sharpe Ratio = (E(R<sub>p</sub>) - R<sub>f</sub>) / σ<sub>p</sub>
+    </div>
+    <p>Higher Sharpe Ratios indicate better risk-adjusted returns.</p>
+
+    <h2>3. Optimizing Sharpe Ratio</h2>
+    <p>Finding the portfolio weights that maximize the Sharpe Ratio.</p>
+    <p>Steps:</p>
+    <ul>
+        <li>Define the Sharpe Ratio formula as the objective function.</li>
+        <li>Use constraints: Weights sum to 1 (Σ w<sub>i</sub> = 1).</li>
+        <li>Solve the optimization problem using numerical methods.</li>
+    </ul>
+
+    <h2>4. Portfolio Rebalancing</h2>
+    <p>Rebalancing ensures a portfolio maintains its target allocation over time.</p>
+    <div class="equation">
+        New Holdings = (Target Weights ⋅ Portfolio Value) / Asset Prices
+    </div>
+    <p>Benefits:</p>
+    <ul>
+        <li>Maintains desired risk-return profile.</li>
+        <li>Reduces over-concentration in high-performing assets.</li>
+    </ul>
+
+    <h2>How They Fit Together</h2>
+    <p>Workflow:</p>
+    <ol>
+        <li>Construct Efficient Frontier: Understand the risk-return tradeoff by identifying optimal portfolios.</li>
+        <li>Sharpe Ratio Analysis: Evaluate portfolios on the frontier to identify those with the highest risk-adjusted returns.</li>
+        <li>Optimize Sharpe Ratio: Fine-tune portfolio weights to maximize the Sharpe Ratio.</li>
+        <li>Rebalancing: Ensure the portfolio maintains optimal weights over time for consistent performance.</li>
+    </ol>
+</body>
+</html>
