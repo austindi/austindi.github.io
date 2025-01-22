@@ -133,7 +133,7 @@
     </style>
 </head>
 <header> 
-    <h1>Skills</h1>
+    <h1>Projects</h1>
   </header>
 <body>
     <!-- Navigation Bar -->
@@ -149,10 +149,12 @@
     <!-- Main Content -->
     <main>
         <section>
-            <h1>My Skills</h1>
-            <div id="skills-container" class="skills-list">
-                <!-- Skills will be dynamically loaded here -->
-            </div>
+            <h1>Simulated Scanning Tunneling Spectrospy Data</h1>
+            Density Functional Theory (DFT) is a computational method used to study the electronic structure of materials at the atomic level. It helps scientists understand how electrons behave in a material, which is essential for predicting its physical and chemical properties. Think of it as a way to create a “map” of where electrons are likely to be found and how they interact within a material, based on quantum mechanics.
+
+Scanning Tunneling Spectroscopy (STS) is an experimental technique that measures the electronic properties of a material by analyzing how electrons “tunnel” between a sharp tip and the material’s surface when a voltage is applied. This tunneling current changes depending on the energy levels of the material’s electrons, providing a detailed “fingerprint” of the electronic structure.
+
+Simulating STS data using DFT results is crucial because it bridges theory and experiment. While STS provides real-world measurements, DFT simulations help us interpret these measurements by predicting how the electronic structure should appear. This allows scientists to verify theoretical models, design new materials, and understand phenomena at the atomic scale with greater accuracy.
         </section>
     </main>
 
@@ -165,37 +167,6 @@
             <a href="https://www.linkedin.com/in/dave-austin-ph-d-616865a9" target="_blank">LinkedIn</a>
         </p>
     </footer>
-    <script>
-        // Fetch and Display Skills
-async function loadSkills() {
-    try {
-        const response = await fetch('skills.json'); // Replace with your API endpoint if needed
-        const skills = await response.json();
-
-        const skillsContainer = document.getElementById('skills-container');
-        skillsContainer.innerHTML = ''; // Clear previous content
-
-        skills.forEach(skill => {
-            const skillCard = `
-                <div class="skill-card">
-                    <h3>${skill.name}</h3>
-                    <p>${skill.description}</p>
-                    <span>Experience: ${skill.experience} years</span>
-                </div>
-            `;
-            skillsContainer.innerHTML += skillCard;
-        });
-    } catch (error) {
-        console.error('Error loading skills:', error);
-    }
-}
-
-// Load skills on page load (only for skills.html)
-if (document.getElementById('skills-container')) {
-    loadSkills();
-}
-
-    </script>
 </body>
 </html>
 
