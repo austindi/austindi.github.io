@@ -25,75 +25,79 @@
         "experience": 2
     },
     {
-            "name": "Leadership and Organizational Skills",
-            "description": "Demonstrated leadership through roles such as Vice President of the American Physical Society Chapter (2023–2024) and Treasurer of the Graduate Society of Physics Students (2019–2020), organizing events, managing budgets, and fostering collaboration among members.",
-            "experience": 5
-        },{
-            "name": "Mentoring and Tutoring",
-            "description": "Served as a graduate course tutor (2021–2023), helping students develop problem-solving skills and adjust to academic challenges, while mentoring graduate students in research techniques and data analysis methods.",
-            "experience": 5
-        },{
-            "name": "C++ Programming",
-            "description": "Self-taught C++ for computational tasks, focusing on performance optimization and numerical methods in research projects.",
-            "experience": 3
-        }, {
-            "name": "LaTeX",
-            "description": "Proficient in LaTeX for creating high-quality scientific documents, including papers, presentations, and reports.",
-            "experience": 7
-        },
-        {
-            "name": "MATLAB",
-            "description": "Used MATLAB for solving differential equations, modeling physical systems, and data visualization in research projects.",
-            "experience": 5
-        },
-        {
-            "name": "Mathematica",
-            "description": "Applied Mathematica to solve complex mathematical problems and simulate physical phenomena in computational physics.",
-            "experience": 4
-        },{
-            "name": "High-Performance Computing (HPC)",
-            "description": "Utilized HPC environments to run large-scale simulations and data analysis for density functional theory calculations and other computational research.",
-            "experience": 7
-        },
-        {
-            "name": "VASP and Quantum Espresso",
-            "description": "Experienced in using VASP and Quantum Espresso for density functional theory (DFT) calculations and electronic structure analysis.",
-            "experience": 7
-        },
-        {
-            "name": "Scientific Communication",
-            "description": "Effectively communicated scientific results through publications, presentations, and visualizations for both technical and non-technical audiences.",
-            "experience": 7
-        },
-        {
-            "name": "Mathematics and Physics",
-            "description": "Extensive background in mathematics and physics, specializing in computational modeling and numerical methods.",
-            "experience": 10
-        },
-        {
-            "name": "SLURM and Linux",
-            "description": "Managed and optimized computational workloads using SLURM job scheduler in Linux environments.",
-            "experience": 7
-        },
-        {
-            "name": "Flask Framework",
-            "description": "Used Flask to build and deploy lightweight web applications for data visualization and user interaction with research models.",
-            "experience": 3
-        },
-        {
-            "name": "Git Version Control",
-            "description": "Proficient in Git for version control, ensuring collaborative workflow and maintaining code integrity in research projects.",
-            "experience": 6
-        },
-        {
-            "name": "POVRAY",
-            "description": "Used POVRAY for 3D rendering to create detailed scientific visualizations and graphical representations of computational results.",
-            "experience": 2
-        },
-        {
-            "name": "Solidity",
-            "description": "Gained foundational knowledge of Solidity for creating basic blockchain-based applications and smart contracts.",
-            "experience": 1
-        }
+        "name": "Leadership and Organizational Skills",
+        "description": "Demonstrated leadership through roles such as Vice President of the American Physical Society Chapter (2023–2024) and Treasurer of the Graduate Society of Physics Students (2019–2020), organizing events, managing budgets, and fostering collaboration among members.",
+        "experience": 5
+    },
+    {
+        "name": "Mentoring and Tutoring",
+        "description": "Served as a graduate course tutor (2021–2023), helping students develop problem-solving skills and adjust to academic challenges, while mentoring graduate students in research techniques and data analysis methods.",
+        "experience": 5
+    },
+    {
+        "name": "C++ Programming",
+        "description": "Self-taught C++ for computational tasks, focusing on performance optimization and numerical methods in research projects.",
+        "experience": 3
+    },
+    {
+        "name": "LaTeX",
+        "description": "Proficient in LaTeX for creating high-quality scientific documents, including papers, presentations, and reports.",
+        "experience": 7
+    },
+    {
+        "name": "MATLAB",
+        "description": "Used MATLAB for solving differential equations, modeling physical systems, and data visualization in research projects.",
+        "experience": 5
+    },
+    {
+        "name": "Mathematica",
+        "description": "Applied Mathematica to solve complex mathematical problems and simulate physical phenomena in computational physics.",
+        "experience": 4
+    },
+    {
+        "name": "High-Performance Computing (HPC)",
+        "description": "Utilized HPC environments to run large-scale simulations and data analysis for density functional theory calculations and other computational research.",
+        "experience": 7
+    },
+    {
+        "name": "VASP and Quantum Espresso",
+        "description": "Experienced in using VASP and Quantum Espresso for density functional theory (DFT) calculations and electronic structure analysis.",
+        "experience": 7
+    },
+    {
+        "name": "Scientific Communication",
+        "description": "Effectively communicated scientific results through publications, presentations, and visualizations for both technical and non-technical audiences.",
+        "experience": 7
+    },
+    {
+        "name": "Mathematics and Physics",
+        "description": "Extensive background in mathematics and physics, specializing in computational modeling and numerical methods.",
+        "experience": 10
+    },
+    {
+        "name": "SLURM and Linux",
+        "description": "Managed and optimized computational workloads using SLURM job scheduler in Linux environments.",
+        "experience": 7
+    },
+    {
+        "name": "Flask Framework",
+        "description": "Used Flask to build and deploy lightweight web applications for data visualization and user interaction with research models.",
+        "experience": 3
+    },
+    {
+        "name": "Git Version Control",
+        "description": "Proficient in Git for version control, ensuring collaborative workflow and maintaining code integrity in research projects.",
+        "experience": 6
+    },
+    {
+        "name": "POVRAY",
+        "description": "Used POVRAY for 3D rendering to create detailed scientific visualizations and graphical representations of computational results.",
+        "experience": 2
+    },
+    {
+        "name": "Solidity",
+        "description": "Gained foundational knowledge of Solidity for creating basic blockchain-based applications and smart contracts.",
+        "experience": 1
+    }
 ]
 
