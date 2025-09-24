@@ -1,0 +1,50 @@
+[
+  {
+    "title": "A generalized phase resetting method for phase-locked modes prediction",
+    "image_url": "images/PRC.png",
+    "summary": "This study introduces an innovative method to predict and analyze phase-locked modes in neural networks, focusing on master-slave systems with dynamic feedback. Expanding on traditional phase resetting, the research incorporates multiple inputs per cycle to better reflect complex neural interactions. The authors provide a recursive approach to calculate phase resetting for these scenarios, validated through numerical simulations. This framework offers new insights into neural synchronization, paving the way for advancements in understanding neural dynamics and their applications in neuroscience.",
+    "link": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0174304"
+  },
+  {
+    "title": "Fine-tuned local coordination environment of Pt single atoms on ceria controls catalytic reactivity",
+    "image_url": "images/41467_2022_34797_Fig6_HTML.webp",
+    "summary": "This groundbreaking study explores how fine-tuning the local coordination environment of platinum (Pt) single atoms on cerium oxide (ceria) significantly enhances their catalytic performance for low-temperature carbon monoxide (CO) oxidation. By precisely adjusting the atomic arrangement around Pt atoms, researchers achieved improved catalytic activity and stability, paving the way for more efficient single-atom catalyst designs. These findings provide valuable insights for advancing catalytic technologies to address environmental challenges.",
+    "link": "https://www.nature.com/articles/s41467-022-34797-2"
+  },
+  {
+    "title": "Ligand-Coordinated Pt Single-Atom catalyst facilitates Support-Assisted Water-Gas shift reaction",
+    "image_url": "images/Pt_ligand.jpg",
+    "summary": "This study explores how interactions between single metal atoms and their support materials affect catalytic performance in carbon monoxide (CO) oxidation. By focusing on single-atom catalysts, the research uncovers critical insights into optimizing these interactions to boost efficiency. These findings pave the way for innovative catalyst designs with enhanced performance for environmental applications.",
+    "link": "https://www.sciencedirect.com/science/article/pii/S0021951724004366"
+  },
+  {
+    "title": "Increased Selectivity in Photolytic Activation of Nanoassemblies Compared to Thermal Activation in On-Surface Ullmann Coupling",
+    "image_url": "images/Ullmann_coupling.webp",
+    "summary": "The study investigates the selectivity of on-surface Ullmann coupling reactions, comparing photolytic (light-induced) activation to traditional thermal activation methods. The research demonstrates that photolytic activation enhances selectivity in forming desired products, offering a more controlled approach to synthesizing complex molecular structures on surfaces. These findings have significant implications for the development of advanced materials and nanostructures, highlighting the potential of light-driven processes in surface chemistry.",
+    "link": "https://pubs.acs.org/doi/full/10.1021/acsnano.3c11509"
+  },
+  {
+    "title": "Inelastic Electron Tunneling Spectroscopy as a Probe of Electronic Coupling at a Molecule–Metal Interface",
+    "image_url": "images/medium.png",
+    "summary": "This study introduces inelastic electron tunneling spectroscopy (IETS) to distinguish weak versus strong electronic coupling of a bistable molecule to a metal electrode. Using ab initio calculations, the authors show that coupling strength correlates with orbital hybridization near the Fermi level, influencing electron lifetimes and spectroscopic signal strength. The coupling is tunable via the STM tip, revealing intermediate states between weak and strong regimes.",
+    "link": "https://journals.aps.org/prb/abstract/10.1103/PhysRevB.111.115426"
+  },
+  {
+    "title": "Unveiling Coverage-Dependent Interactions of N-Methylaniline on Pt(111)",
+    "image_url": "images/jp4c08116_0013.jpg",
+    "summary": "This paper investigates how coverage influences the adsorption and surface chemistry of N-methylaniline (NMA) on Pt(111). Combining DFT, TP-XPS, TPD, and FT-IRRAS, the study reveals that lower coverages lead to phenyl-ring binding and C–N bond activation, while higher coverages shift bonding to the nitrogen atom with different desorption behaviors. These insights deepen understanding of aromatic amine interactions on catalytic surfaces.",
+    "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11973917/"
+  },
+  {
+    "title": "Role of Spectator Species for Amine–Surface Chemistry: Ethylene and Ethylidyne on Pt(111)",
+    "image_url": "images/ja5c00567_0006.webp",
+    "summary": "This study explores how co-adsorbed ‘spectator’ species like ethylene and ethylidyne affect the surface chemistry of amines on Pt(111). It demonstrates that these molecules modify reaction pathways and activation processes of N-methylaniline, highlighting that the presence of these species can significantly influence catalytic behaviors and selectivity at the surface.",
+    "link": "https://pubs.acs.org/doi/10.1021/jacs.5c00567"
+  },
+  {
+    "title": "Evidence of Au(111) Topological States in a Kagome-Analogue Lattice",
+    "image_url": "images/2BrBTD.jpeg",
+    "summary": "This paper reports the experimental realization of a kagome-analogue lattice on Au(111) that exhibits robust topological electronic states. The findings show these states persist beyond ultra-low temperatures and in the presence of defects, suggesting potential for novel quantum materials and devices based on two-dimensional lattices.",
+    "link": "https://pubs.rsc.org/en/content/articlelanding/2025/nr/d5nr00229j"
+  }
+]
