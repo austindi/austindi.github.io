@@ -7,10 +7,18 @@
       <div class="container hero__inner">
         <div>
           <div class="kicker">Software & Data Engineer • Physicist</div>
-          <h1 class="h1">Hi, I’m Dr. Dave Austin.</h1>
+          <h1 class="h1">Hi, I’m Dr. Dave Austin,</h1>
           <p class="hero__sub">
-            I design scalable data pipelines, build intelligent systems, and
-            apply physics-honed problem solving to real-world challenges.
+            I completed my PhD in computational physics at the University of
+            Central Florida, where I used high-performance computing and
+            advanced simulation methods to study 2D materials and their
+            electronic properties. My research combined density functional
+            theory, data analysis, and experimental collaboration to uncover
+            insights into nanoscale phenomena. I am currently working as a
+            Software Engineer/Data Engineer at Bear Cognition, where I design
+            and optimize data pipelines, build scalable cloud-based solutions,
+            and apply my analytical background to solve complex business
+            problems.
           </p>
           <div class="cta">
             <a href="#projects" class="btn btn--primary">View My Projects</a>
