@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matplotlib Preloaded in PyScript</title>
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css">
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+</head>
+<body>
+    <h1>Preloaded Matplotlib Plot in PyScript</h1>
+
+    <py-env>
+        - matplotlib
+    </py-env>
+
+    <py-script>
+        import matplotlib.pyplot as plt
+
+        # Create a bar chart
+        plt.bar(["A", "B", "C", "D"], [5, 7, 3, 8], color="blue")
+        plt.xlabel("Categories")
+        plt.ylabel("Values")
+        plt.title("Bar Chart Example")
+
+        # Display the plot
+        plt.show()
+    </py-script>
+</body>
+</html>
+

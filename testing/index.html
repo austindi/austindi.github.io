@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Home</h1>
+    </header>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <button onclick="location.href='index.html'">Home</button>
+        <button onclick="location.href='#about'">About Me</button>
+        <button onclick="location.href='#projects'">Projects</button>
+        <button onclick="location.href='passion.html'">Passion</button>
+        <button onclick="location.href='#gallery'">Gallery</button>
+        <button onclick="location.href='#blog'">Blog</button>
+    </nav>
+
+    <!-- Main Content -->
+    <section class="main-content">
+        <div class="about" id="about">
+            <h2>About Me</h2>
+            <p>
+                                Hi, I’m Dave Austin, Ph.D., a physicist specializing in computational materials science     and passionate about exploring the intricate world of surface phenomena and catalytic reactions. My work com    bines theoretical insights and advanced modeling techniques to solve challenges in nanotechnology and sustai    nable energy.
+227 I’ve had the privilege of publishing in renowned journals such as Nature Communications and ACS Nano and pre    senting at international conferences like the APS March Meeting. My goal is to advance our understanding of     material behaviors at the atomic scale and inspire others through science and education.
+228 Feel free to explore my website to learn more about my research, publications, and outreach initiatives. Let        ’s connect and create meaningful impact together!
+            </p>
+        </div>
+     <div class="profile-picture">
+         <img src="images/Dave-Austin.jpeg" alt="Profile Picture">
+     </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="publications-section">
+        <h2>My Publications</h2>
+        <div class="carousel">
+            <button class="arrow left-arrow" onclick="prevSlide()">&#8592;</button>
+            <div id="publications-container" class="carousel-slides"></div>
+            <button class="arrow right-arrow" onclick="nextSlide()">&#8594;</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            Contact: <a href="mailto:austindi1133@gmail.com">austindi1133@gmail.com</a> |
+            Phone: +1-(864)-384-9579 |
+            <a href="https://github.com/austindi" target="_blank">GitHub</a> |
+            <a href="https://www.linkedin.com/in/dave-austin-ph-d-616865a9" target="_blank">LinkedIn</a>
+        </p>
+    </footer>
+ <script>
+     let currentIndex = 0;
+
+     async function loadPublications() {
+         try {
+             const response = await fetch('publications.json');
+             const publications = await response.json();
+
+             const container = document.getElementById('publications-container');
+             container.innerHTML = ''; // Clear previous content
+
+             publications.forEach(pub => {
+                 const publicationCard = `
+                     <div class="publication-card">
+                         <img src="${pub.image_url}" alt="${pub.title}">
+                         <h3>${pub.title}</h3>
+                         <p>${pub.summary}</p>
+                         <a href="${pub.link}" target="_blank">Read More</a>
+                     </div>
+                 `;
+                 container.innerHTML += publicationCard;
+             });
+
+             updateCarousel();
+         } catch (error) {
+             console.error('Error loading publications:', error);
+         }
+     }
+
+     function updateCarousel() {
+         const container = document.getElementById('publications-container');
+         const totalSlides = document.querySelectorAll('.publication-card').length;
+         const offset = -currentIndex * 320; // Adjust based on card width + gap
+         container.style.transform = `translateX(${offset}px)`;
+
+         document.querySelector('.left-arrow').disabled = currentIndex === 0;
+         document.querySelector('.right-arrow').disabled = currentIndex === totalSlides - 1;
+     }
+
+     function nextSlide() {
+         const totalSlides = document.querySelectorAll('.publication-card').length;
+         if (currentIndex < totalSlides - 1) {
+             currentIndex++;
+             updateCarousel();
+         }
+     }
+
+     function prevSlide() {
+         if (currentIndex > -1) {
+             currentIndex--;
+             updateCarousel();
+         }
+     }
+
+     // Load publications on page load
+     loadPublications();
+ </script>
+</body>
+</html>
+

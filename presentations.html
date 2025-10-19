@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Presentations</title>
+<style>
+/* Presentations Section */
+       header {
+              background: #333;
+              color: #fff;
+              padding: 1em 0;
+              text-align: center;
+          }
+         /* General Styles */
+         body {
+             font-family: Arial, sans-serif;
+             margin: 0;
+             padding: 0;
+             box-sizing: border-box;
+         }
+
+         /* Navbar Styles */
+         .navbar {
+             display: flex;
+             justify-content: space-around;
+             align-items: center;
+             background-color: #333;
+             padding: 10px 0;
+         }
+
+         .navbar button {
+             background-color: #0078d7;
+             color: white;
+             border: none;
+             padding: 10px 20px;
+             cursor: pointer;
+             font-size: 16px;
+             border-radius: 5px;
+             transition: background-color 0.3s ease;
+         }
+
+         .navbar button:hover {
+             background-color: #005bb5;
+         }
+         footer {
+             background-color: #333;
+             color: white;
+             text-align: center;
+             padding: 10px 0;
+             font-size: 14px;
+         }
+
+         footer a {
+             color: #0078d7;
+             text-decoration: none;
+             margin: 0 10px;
+         }
+
+         footer a:hover {
+             text-decoration: underline;
+         }
+
+         /* Responsive Adjustments */
+         @media (max-width: 768px) {
+             .navbar {
+                 flex-wrap: wrap;
+                 justify-content: center;
+             }
+
+             .navbar button {
+                 margin: 5px;
+             }
+
+             .main-content {
+                 flex-direction: column;
+             }}
+.presentation-section {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+.presentation-section h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.presentation-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.presentation-item {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #fff;
+}
+
+.presentation-item h3 {
+    margin: 0;
+    font-size: 20px;
+    color: #0078d7;
+}
+
+.presentation-item p {
+    margin: 5px 0 0;
+    font-size: 16px;
+    color: #555;
+}
+.presentation-item p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.presentation-item span {
+    font-size: 14px;
+    color: #0078d7;
+    font-weight: bold;
+}
+</style>
+</head>
+<body>
+    <header>
+    <h1>Presentation</h1>
+   </header>
+ <!-- Navigation Bar -->
+ <nav class="navbar">
+     <button onclick="location.href='index.html'">Home</button>
+     <button onclick="location.href='passion.html'">About Me</button>
+     <button onclick="location.href='projects.html'">Projects</button>
+     <button onclick="location.href='presentations.html'">Presentations</button>
+     <button onclick="location.href='skills.html'">Skills</button>
+ </nav>
+    <!-- Presentations Section -->
+    <main>
+        <section>
+            <h1>My Presentations</h1>
+            <div id="oral-presentations" class="presentation-section">
+                <h2>Oral Presentations</h2>
+                <div class="presentation-list">
+                    <!-- Oral presentations will be dynamically loaded here -->
+                </div>
+            </div>
+
+            <div id="poster-presentations" class="presentation-section">
+                <h2>Poster Presentations</h2>
+                <div class="presentation-list">
+                    <!-- Poster presentations will be dynamically loaded here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+<!-- Footer -->
+<footer>
+    <p>
+        Contact: <a href="mailto:austindi1133@gmail.com">austindi1133@gmail.com</a> |
+        Phone: +1-(864)-384-9579 |
+        <a href="https://github.com/austindi" target="_blank">GitHub</a> |
+        <a href="https://www.linkedin.com/in/dave-austin-ph-d-616865a9" target="_blank">LinkedIn</a>
+    </p>
+</footer>
+    <script> // Function to load and display presentations
+       
+        // Function to load and display presentations
+async function loadPresentations() {
+    try {
+        const response = await fetch('presentations.json'); // Fetch data from JSON
+        const presentations = await response.json();
+
+        const oralContainer = document.querySelector('#oral-presentations .presentation-list');
+        const posterContainer = document.querySelector('#poster-presentations .presentation-list');
+
+        // Populate Oral Presentations
+        presentations.oral.forEach(presentation => {
+            const item = createPresentationItem(presentation);
+            oralContainer.appendChild(item);
+        });
+
+        // Populate Poster Presentations
+        presentations.poster.forEach(presentation => {
+            const item = createPresentationItem(presentation);
+            posterContainer.appendChild(item);
+        });
+    } catch (error) {
+        console.error('Error loading presentations:', error);
+    }
+}
+
+// Helper function to create a presentation item
+function createPresentationItem(presentation) {
+    const item = document.createElement('div');
+    item.classList.add('presentation-item');
+
+    const title = document.createElement('h3');
+    title.textContent = presentation.title;
+
+    const event = document.createElement('p');
+    event.textContent = `Event: ${presentation.event}`;
+
+    const date = document.createElement('p');
+    date.textContent = `Date: ${presentation.date}`;
+
+    const location = document.createElement('span');
+    location.textContent = `Location: ${presentation.location}`;
+
+    const author = document.createElement('p');
+    author.textContent = `Authors: ${presentation.authors}`;
+
+    item.appendChild(title);
+    item.appendChild(event);
+    item.appendChild(date);
+    item.appendChild(location);
+    item.appendChild(author);
+    
+    return item;
+}
+
+// Load presentations on page load
+document.addEventListener('DOMContentLoaded', loadPresentations);
+
+</script>
+</body>
+</html>
+
