@@ -5,7 +5,7 @@ export default defineNuxtConfig({
     preset: "github-pages", // Simplifies GitHub Pages deployment
   },
   app: {
-    baseURL: "/austindi.github.io/", // Root-level site (since repo name = austindi.github.io)
+    baseURL: "/", // Root-level site (since repo name = austindi.github.io)
     head: {
       title: "Dave Austin — Software & Data Engineer",
       meta: [
