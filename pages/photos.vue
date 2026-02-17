@@ -2,7 +2,7 @@
   <div class="photos-page">
     <div class="container">
       <header class="photos-page__head">
-        <h1 class="photos-page__title">Photos of me</h1>
+        <h1 class="photos-page__title">Gallery</h1>
         <p class="section__desc">A few pictures from work, travel, and life.</p>
         <NuxtLink to="/" class="btn">← Back to home</NuxtLink>
       </header>

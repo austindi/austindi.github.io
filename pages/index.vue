@@ -5,16 +5,24 @@
       <div class="container hero__inner">
         <div>
           <div class="kicker">Data Engineer | AI Systems Builder | Scalable Data Platforms</div>
-          <h1 class="h1">Hi, I’m Dr. Dave Austin,</h1>
+          <h1 class="h1">Hi, I’m Dave Austin, Ph.D.,</h1>
           <div class="hero__sub">
             <p>
-              I completed my PhD in Computational Physics at the University of Central Florida, where I built large-scale computational workflows and data pipelines to support high-performance simulations and analysis of complex materials systems. My work combined scientific modeling with automation, data engineering, and reproducible computing practices across HPC environments.
+              I completed my PhD in Computational Physics at the University of Central Florida, where I built
+              large-scale computational workflows and data pipelines to support high-performance simulations and
+              analysis of complex materials systems. My work combined scientific modeling with automation, data
+              engineering, and reproducible computing practices across HPC environments.
             </p>
             <p>
-              I currently work as a Software Engineer and Data Engineer at Bear Cognition, where I design and maintain production data pipelines that transform diverse operational data into reliable, analytics-ready datasets. I develop cloud-based data systems with a focus on scalability, monitoring, and reliability, working with APIs, logistics data, and variable real-world inputs to build resilient ingestion and validation workflows.
+              I currently work as a Software Engineer and Data Engineer at Bear Cognition, where I design and maintain
+              production data pipelines that transform diverse operational data into reliable, analytics-ready datasets.
+              I develop cloud-based data systems with a focus on scalability, monitoring, and reliability, working with
+              APIs, logistics data, and variable real-world inputs to build resilient ingestion and validation
+              workflows.
             </p>
             <p>
-              Across both research and industry, I apply a scientific approach to engineering — emphasizing measurable outcomes, systematic debugging, and systems built for long-term reliability.
+              Across both research and industry, I apply a scientific approach to engineering — emphasizing measurable
+              outcomes, systematic debugging, and systems built for long-term reliability.
             </p>
           </div>
           <div class="cta">
@@ -161,17 +169,7 @@
             Professional and technical certifications.
           </p>
         </div>
-        <div class="timeline">
-          <div v-for="cert in certifications" :key="cert.name" class="timeline__item">
-            <h3 style="margin: 0">{{ cert.name }}</h3>
-            <p v-if="cert.issuer" class="section__desc">{{ cert.issuer }}</p>
-            <p v-if="cert.date || cert.link" class="section__desc" style="font-size: 0.9rem; margin-top: 4px">
-              {{ cert.date }}{{ cert.date && cert.link ? " · " : "" }}
-              <a v-if="cert.link" :href="cert.link" target="_blank" rel="noopener noreferrer">Verify</a>
-            </p>
-          </div>
-          <p v-if="!certifications.length" class="section__desc">No certifications added yet.</p>
-        </div>
+        <CertificationsCard />
       </div>
     </section>
 
@@ -184,7 +182,7 @@
         <p class="section__desc">Open to roles and collaborations.</p>
         <div class="cta">
           <a href="mailto:austindi1133@gmail.com" class="btn btn--primary">Email Me</a>
-          <NuxtLink to="/photos" class="btn">Photos of me</NuxtLink>
+          <NuxtLink to="/photos" class="btn">Gallery</NuxtLink>
           <a href="https://www.linkedin.com/in/dave-austin-ph-d-616865a9" class="btn" target="_blank"
             rel="noopener noreferrer">LinkedIn</a>
           <a href="https://github.com/austindi" class="btn" target="_blank" rel="noopener noreferrer">GitHub</a>
@@ -240,11 +238,6 @@ const education = [
 ];
 
 const showPrefectStats = true; // Set false to hide Task Runs card
-
-const certifications = [
-  // Add your certifications, e.g.:
-  // { name: "AWS Certified Solutions Architect", issuer: "Amazon Web Services", date: "2024", link: "https://..." },
-];
 
 </script>
 

@@ -1,0 +1,39 @@
+{
+  "have": [
+    {
+      "name": "AWS Certified Cloud Practitioner",
+      "issuer": "Amazon Web Services",
+      "date": "2025-09-24",
+      "link": "https://www.credly.com/badges/6dfa883f-6eee-47a5-acb1-34d50c685827",
+      "image": "aws_cloud_prac.png"
+    }
+  ],
+  "next": [
+    {
+      "name": "AWS Certified Solutions Architect – Associate",
+      "image": "aws_sol_arch.png"
+    },
+    {
+      "name": "AWS Certified AI Practitioner",
+      "image": "aws_AI_prac.png"
+    }
+  ],
+  "want": [
+    {
+      "name": "AWS Certified Data Engineer – Associate",
+      "image": "aws_data_engineering.png"
+    },
+    {
+      "name": "AWS Certified Solutions Architect – Professional",
+      "image": "aws_sol_arch.png"
+    },
+    {
+      "name": "Snowflake SnowPro Core Certification",
+      "image": "snowpro_core.png"
+    },
+    {
+      "name": "Snowflake SnowPro Advanced: Data Engineer",
+      "image": "snowpro_data_engineer.png"
+    }
+  ]
+}
