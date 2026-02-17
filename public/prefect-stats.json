@@ -1,0 +1,11 @@
+{
+  "updated_at": "2026-02-17T16:06:15-05:00",
+  "reliability": {
+    "success_rate": 0.997,
+    "p95_runtime_minutes": 4
+  },
+  "operations": {
+    "runs_monitored": 9877200,
+    "active_flows": 77
+  }
+}
