@@ -278,7 +278,7 @@ const projects = [
     title: "Agentic Repair & Pipeline Recovery",
     tagline:
       "Automated monitoring systems that detect pipeline failures, analyze runtime context, and generate corrective recovery actions. Reduces manual intervention by enabling self-healing workflows and faster operational recovery.",
-    stack: ["Prefect", "Python", "OpenAI API", "Structured logging", "Event-driven workflows"],
+    stack: ["Prefect", "Python", "OpenAI API", "MCP", "Structured logging", "Event-driven workflows"],
     github: "https://github.com/austindi",
     inProgress: true,
   },
@@ -301,7 +301,7 @@ const projects = [
     title: "AI-Driven Pipeline Observability",
     tagline:
       "Automated monitoring system that analyzes Prefect workflow logs to detect warnings and incomplete processing events. An LLM summarizes operational issues, identifies potential data gaps, and delivers daily diagnostic reports, improving visibility and reducing unnoticed pipeline failures.",
-    stack: ["Prefect", "Python", "OpenAI API", "Structured Logging", "Email Automation"],
+    stack: ["Prefect", "Python", "OpenAI API", "MCP", "Structured Logging", "Email Automation"],
     github: "https://github.com/austindi",
     inProgress: true,
   },
@@ -309,7 +309,7 @@ const projects = [
     title: "Workflow Observability & Incident Automation",
     tagline:
       "Operational monitoring system that detects workflow failures and automatically generates Linear tickets with execution context, reducing manual triage and improving response time. Tracks per-customer flow runtime and resource usage to provide visibility into operational cost and performance across data pipelines.",
-    stack: ["Prefect", "Python", "Linear API", "Structured Logging", "AWS", "Snowflake"],
+    stack: ["Prefect", "Python", "OpenAI API", "MCP", "Linear API", "Structured Logging", "AWS", "Snowflake"],
     github: "https://github.com/austindi",
   },
   {

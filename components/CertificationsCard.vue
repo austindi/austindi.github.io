@@ -158,7 +158,7 @@ onMounted(async () => {
 .certs__badge--have:hover {
   transform: scale(1.02);
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
-  border-color: #2b445a;
+  border-color: var(--border-hover);
 }
 
 .certs__badge--greyed {
@@ -172,7 +172,7 @@ onMounted(async () => {
 .certs__badge--greyed:hover {
   transform: scale(1.02);
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
-  border-color: #2b445a;
+  border-color: var(--border-hover);
 }
 
 .certs__badge--next {
@@ -181,13 +181,13 @@ onMounted(async () => {
   margin: -8px;
   border-radius: 10px;
   background: transparent;
-  border: 2px solid color-mix(in lab, #40B89A 45%, transparent);
+  border: 2px solid color-mix(in lab, var(--accent) 45%, transparent);
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 .certs__badge--next:hover {
   transform: scale(1.02);
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
-  border-color: #2b445a;
+  border-color: var(--border-hover);
 }
 
 .certs__badge--next .certs__img-wrap,

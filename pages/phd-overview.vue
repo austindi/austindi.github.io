@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div class="page-with-toc">
+    <main class="page-with-toc__main">
     <section class="section hero">
       <div class="container">
         <div class="page-header">
@@ -239,6 +240,25 @@
         </div>
       </div>
     </section>
+
+    <!-- Contact footer -->
+    <footer class="page-footer section">
+      <div class="container card page-footer__inner">
+        <div class="section__head" style="margin: 0 0 6px">
+          <h2 class="section__title" style="margin: 0">Contact</h2>
+        </div>
+        <p class="section__desc">Open to roles and collaborations.</p>
+        <div class="cta">
+          <a href="mailto:austindi1133@gmail.com" class="btn btn--primary">Email Me</a>
+          <NuxtLink to="/" class="btn">Home</NuxtLink>
+          <a href="https://www.linkedin.com/in/dave-austin-ph-d-616865a9" class="btn" target="_blank"
+            rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/austindi" class="btn" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+      </div>
+    </footer>
+    </main>
+    <PageToc :items="tocItems" />
   </div>
 </template>
 
@@ -247,6 +267,15 @@ definePageMeta({
   title: "Scientific Background & Research Foundations — Dave Austin",
   description: "Peer-reviewed publications, oral and poster presentations",
 });
+
+const tocItems = [
+  { id: "research", label: "Research Experience" },
+  { id: "publications", label: "Peer-reviewed Papers" },
+  { id: "grants-awards", label: "Grants and Awards" },
+  { id: "oral", label: "Oral Presentations" },
+  { id: "posters", label: "Poster Presentations" },
+  { id: "leadership", label: "Leadership Experience" },
+];
 
 interface Presentation {
   title: string;
@@ -456,7 +485,7 @@ onBeforeUnmount(() => {
 .card:hover {
   transform: scale(1.02);
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
-  border-color: #2b445a;
+  border-color: var(--border-hover);
 }
 
 .btn {
@@ -465,7 +494,7 @@ onBeforeUnmount(() => {
 
 .btn:hover {
   transform: scale(1.03);
-  border-color: #2b445a;
+  border-color: var(--border-hover);
 }
 
 .carousel__arrow {
@@ -476,7 +505,7 @@ onBeforeUnmount(() => {
 .carousel__arrow:hover {
   transform: scale(1.08);
   filter: brightness(1.1);
-  border-color: #2b445a;
+  border-color: var(--border-hover);
 }
 
 .presentation-list {
@@ -679,7 +708,7 @@ onBeforeUnmount(() => {
   height: 44px;
   font-size: 20px;
   background: var(--accent);
-  color: #042423;
+  color: var(--btn-primary-color);
   border: 2px solid transparent;
   border-radius: 50%;
   cursor: pointer;
@@ -747,5 +776,27 @@ onBeforeUnmount(() => {
 
 .page-header {
   margin-bottom: 20px;
+}
+
+.page-footer {
+  border-top: 1px solid var(--border);
+  margin-top: 24px;
+}
+
+.page-footer__inner {
+  padding: 18px;
+}
+
+.page-with-toc {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 48px;
+  align-items: start;
+}
+
+@media (max-width: 1020px) {
+  .page-with-toc {
+    grid-template-columns: 1fr;
+  }
 }
 </style>

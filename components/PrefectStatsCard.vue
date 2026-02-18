@@ -12,10 +12,8 @@
           class="prefect-card__item"
         >
           <div class="prefect-card__label-wrap">
-            <span class="prefect-card__label prefect-card__label--with-tip">
-              {{ m.label }}
-              <span class="prefect-card__tip-icon" aria-hidden="true">ⓘ</span>
-            </span>
+            <span class="prefect-card__label prefect-card__label--with-tip"
+              >{{ m.label }}<span class="prefect-card__tip-icon" aria-hidden="true">ⓘ</span></span>
             <span
               class="prefect-card__tooltip"
               role="tooltip"
@@ -149,7 +147,7 @@ function formatRuns(n: number): string {
 <style scoped>
 .prefect-card {
   padding: 20px;
-  max-width: 540px;
+  max-width: 750px;
   box-sizing: border-box;
   overflow: visible;
 }
@@ -178,7 +176,7 @@ function formatRuns(n: number): string {
 
 .prefect-card__grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 14px 20px;
   overflow: visible;
 }
@@ -186,8 +184,11 @@ function formatRuns(n: number): string {
 .prefect-card__item {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 6px;
   overflow: visible;
+  min-width: 0;
+  text-align: center;
 }
 
 .prefect-card__label-wrap {
@@ -195,6 +196,9 @@ function formatRuns(n: number): string {
   cursor: help;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .prefect-card__label {
@@ -203,17 +207,21 @@ function formatRuns(n: number): string {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--muted);
+  white-space: nowrap;
 }
 
 .prefect-card__label--with-tip {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 0;
 }
 
 .prefect-card__tip-icon {
   font-size: 0.7rem;
   opacity: 0.7;
+  margin: 0;
+  margin-left: 4px;
+  flex-shrink: 0;
 }
 
 .prefect-card__tooltip {
