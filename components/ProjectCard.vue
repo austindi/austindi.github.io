@@ -81,4 +81,7 @@ defineProps<{
   color: var(--muted);
   margin-bottom: 8px;
 }
+.cta {
+  margin-top: 14px;
+}
 </style>

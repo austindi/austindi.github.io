@@ -30,8 +30,10 @@
           </div>
           <div class="cta">
             <NuxtLink to="/phd-overview" class="btn btn--primary">Scientific Background & Research Foundations</NuxtLink>
-            <NuxtLink to="/blogs" class="btn">Blogs</NuxtLink>
-            <a href="/Dave_Austin_Resume.pdf" class="btn">Download Resume</a>
+            <div class="cta__row">
+              <NuxtLink to="/blogs" class="btn">Blogs</NuxtLink>
+              <a href="/Resume.pdf" class="btn" download>Download Resume</a>
+            </div>
           </div>
           <div class="pills">
             <span class="pill">⚡ Data Platforms & Automation</span>
@@ -138,11 +140,11 @@
             </div>
             <div class="skills-item">
               <strong>Data</strong>
-              <p class="section__desc">Pandas, NumPy, Snowflake, Fivetran, DuckDB, MongoDB, Firestore</p>
+              <p class="section__desc">Pandas, NumPy, Snowflake, Databricks, Fivetran, DuckDB, MongoDB, Firestore, Parquet, REST APIs, OpenAI API, Linear API</p>
             </div>
             <div class="skills-item">
               <strong>Languages</strong>
-              <p class="section__desc">Python, SQL, C++, Fortran, JavaScript, TypeScript, MATLAB, Mathematica, Shell scripting</p>
+              <p class="section__desc">Python, SQL, C++, Fortran, JavaScript, TypeScript, MATLAB, Mathematica, Shell scripting, Bash</p>
             </div>
           </div>
           <div class="skills-row">
@@ -152,11 +154,11 @@
             </div>
             <div class="skills-item">
               <strong>Infra</strong>
-              <p class="section__desc">GitHub Actions, Docker</p>
+              <p class="section__desc">GitHub Actions, Docker, Doppler, Linux</p>
             </div>
             <div class="skills-item">
-              <strong>Visualization</strong>
-              <p class="section__desc">Plotly, Matplotlib</p>
+              <strong>Visualization & frameworks</strong>
+              <p class="section__desc">Plotly, Matplotlib, Nuxt</p>
             </div>
           </div>
         </div>
@@ -280,7 +282,7 @@ const projects = [
     title: "Data Ingestion & Normalization Platform",
     tagline:
       "Resilient ingestion pipelines designed for inconsistent APIs, logistics feeds, and spreadsheet data. Standardizes heterogeneous inputs into structured, analytics-ready datasets, enabling reliable downstream reporting and decision-making.",
-    stack: ["Python", "Pandas/Polars", "Snowflake", "REST APIs", "OpenAI API (LLM-assisted normalization)", "Parquet"],
+    stack: ["Python", "Pandas", "Databricks", "SQL", "Snowflake", "REST APIs", "OpenAI API (LLM-assisted normalization)", "Parquet"],
     github: "https://github.com/austindi",
   },
   {
