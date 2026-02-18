@@ -51,8 +51,18 @@ body {
 }
 
 .container {
-  width: min(1100px, 92vw);
+  width: 100%;
+  max-width: min(1100px, 92vw);
   margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.page-with-toc__main {
+  min-width: 0;
+}
+
+.main-content {
+  width: 100%;
 }
 
 /* Scroll margin for table-of-contents anchor links (avoid sticky nav overlap) */
@@ -142,16 +152,9 @@ button {
   padding: 72px 0 48px;
 }
 .hero__inner {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 48px;
-  align-items: start;
-}
-@media (max-width: 920px) {
-  .hero__inner {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
+  display: block;
+  width: 100%;
+  max-width: 100%;
 }
 .hero__below {
   display: flex;
@@ -190,7 +193,7 @@ button {
 }
 .hero__sub {
   color: var(--muted);
-  max-width: 58ch;
+  max-width: 100%;
   font-size: 1.05rem;
   line-height: 1.7;
 }
@@ -205,6 +208,9 @@ button {
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 28px;
+  justify-content: flex-start;
+}
+.hero .cta--centered {
   justify-content: center;
 }
 .hero .cta__row {
@@ -212,7 +218,7 @@ button {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
 }
 .btn {
   display: inline-flex;
@@ -249,13 +255,54 @@ button {
   border: 3px solid var(--border);
   background: url("/images/Dave-Austin.png") center/cover no-repeat, var(--hero-photo-bg);
   box-shadow: var(--shadow), 0 0 0 2px color-mix(in lab, var(--accent) 25%, transparent);
+}
+
+.page-with-toc__sidebar {
   position: sticky;
   top: 88px;
+  align-self: start;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
 }
+
+/* Index page: centered image + ToC, bigger image, more spacing */
+.index-sidebar .index-sidebar__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  width: 100%;
+}
+
+.index-sidebar .index-sidebar__inner .hero__photo {
+  width: 100%;
+  max-width: 360px;
+  flex-shrink: 0;
+  margin: 0 auto;
+}
+
+.index-sidebar .index-sidebar__toc-wrap {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.page-with-toc__sidebar:not(.index-sidebar) {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+}
+
+.page-with-toc__sidebar:not(.index-sidebar) .hero__photo {
+  width: 100%;
+  max-width: 340px;
+  flex-shrink: 0;
+}
+
 @media (max-width: 920px) {
-  .hero__photo {
-    position: static;
-    max-width: 320px;
+  .page-with-toc__sidebar .hero__photo {
+    max-width: 280px;
     margin: 0 auto;
   }
 }

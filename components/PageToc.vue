@@ -8,6 +8,7 @@
             :href="`#${item.id}`"
             class="toc__link"
             :class="{ 'toc__link--active': activeId === item.id }"
+            @click.prevent="scrollToSection(item.id)"
           >
             {{ item.label }}
           </a>
@@ -24,6 +25,15 @@ const props = defineProps<{
 
 const activeId = ref<string | null>(null);
 let observer: IntersectionObserver | null = null;
+
+function scrollToSection(id: string) {
+  activeId.value = id;
+  const el = document.getElementById(id);
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+    window.history.replaceState(null, "", `#${id}`);
+  }
+}
 
 onMounted(() => {
   if (typeof window === "undefined") return;
@@ -60,12 +70,13 @@ onBeforeUnmount(() => {
   display: flex;
   justify-content: center;
   width: 100%;
+  max-width: 300px;
 }
 
 .toc__nav {
   border-left: 4px solid var(--border);
   padding: 28px 0 28px 28px;
-  min-width: 260px;
+  min-width: 220px;
 }
 
 .toc__title {

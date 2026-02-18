@@ -147,7 +147,9 @@ function formatRuns(n: number): string {
 <style scoped>
 .prefect-card {
   padding: 20px;
-  max-width: 750px;
+  width: 80%;
+  max-width: 80%;
+  margin: 0 auto;
   box-sizing: border-box;
   overflow: visible;
 }

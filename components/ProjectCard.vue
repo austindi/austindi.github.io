@@ -14,8 +14,8 @@
         <span v-for="s in project.stack" :key="s" class="badge">{{ s }}</span>
       </div>
     </div>
-    <div v-if="project.github" class="cta">
-      <a :href="project.github" target="_blank" rel="noopener noreferrer" class="btn">GitHub</a>
+    <div v-if="project.link" class="cta">
+      <NuxtLink :to="project.link" class="btn">Learn more</NuxtLink>
     </div>
   </article>
 </template>

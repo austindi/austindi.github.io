@@ -1,9 +1,10 @@
 <template>
   <div class="page-with-toc">
     <main class="page-with-toc__main">
+      <div class="container main-content">
       <!-- Hero -->
       <section id="introduction" class="hero">
-        <div class="container hero__inner">
+        <div class="hero__inner">
           <div>
             <div class="kicker">Data Engineer | AI Systems Builder | Scalable Data Platforms</div>
             <h1 class="h1">Hi, I’m Dave Austin, Ph.D.,</h1>
@@ -32,13 +33,10 @@
                 My background in computational physics shaped how I design reliable, measurable data systems.
               </p>
             </div>
-            <div class="cta">
-              <NuxtLink to="/phd-overview" class="btn btn--primary">Scientific Background & Research Foundations
-              </NuxtLink>
-              <div class="cta__row">
-                <NuxtLink to="/blogs" class="btn">Blogs</NuxtLink>
-                <a href="/Resume.pdf" class="btn" download="dave_austin_resume.pdf">Download Resume</a>
-              </div>
+            <div class="cta cta--centered">
+              <NuxtLink to="/phd-overview" class="btn btn--primary">Scientific Background & Research Foundations</NuxtLink>
+              <NuxtLink to="/blogs" class="btn">Blogs</NuxtLink>
+              <a href="/Resume.pdf" class="btn" download="dave_austin_resume.pdf">Download Resume</a>
             </div>
             <div class="pills">
               <span class="pill">⚡ Data Platforms & Automation</span>
@@ -50,14 +48,12 @@
               <PrefectStatsCard />
             </div>
           </div>
-
-          <div class="hero__photo" aria-label="Dave Austin portrait"></div>
         </div>
       </section>
 
       <!-- Systems I've Built -->
       <section id="projects" class="section">
-        <div class="container">
+        <div>
           <div class="section__head">
             <h2 class="section__title">Systems I've Built</h2>
             <p class="section__desc">
@@ -65,10 +61,17 @@
             </p>
           </div>
           <div class="projects">
-            <ProjectCard v-for="p in projects" :key="p.title" :project="p" />
+            <ProjectCard v-for="p in visibleProjects" :key="p.title" :project="p" />
+          </div>
+          <div v-if="projects.length > 3" class="projects-toggle">
+            <button type="button" class="btn" @click="showAllProjects = !showAllProjects">
+              {{ showAllProjects ? 'Show less' : 'Show more' }}
+            </button>
           </div>
         </div>
       </section>
+
+      </div>
 
       <!-- Experience -->
       <section id="experience" class="section">
@@ -255,7 +258,14 @@
         </div>
       </section>
     </main>
-    <PageToc :items="tocItems" />
+    <aside class="page-with-toc__sidebar index-sidebar">
+      <div class="index-sidebar__inner">
+        <div class="hero__photo" aria-label="Dave Austin portrait"></div>
+        <div class="index-sidebar__toc-wrap">
+          <PageToc :items="tocItems" />
+        </div>
+      </div>
+    </aside>
   </div>
 </template>
 
@@ -267,34 +277,27 @@ definePageMeta({
 
 const projects = [
   {
-    title: "RPA Workflow Capture & Execution System",
-    tagline:
-      "Browser-based automation platform that records human workflows and converts them into executable processes. Enables scalable automation of legacy systems and manual operations, bridging human actions with programmable data pipelines.",
-    stack: ["TypeScript", "Chrome Extension APIs", "Nuxt", "Python", "Prefect", "JSON workflow models", "REST APIs", "OpenAI API (LLM-assisted workflow repair)"],
-    github: "https://github.com/austindi",
-    inProgress: true,
-  },
-  {
-    title: "Agentic Repair & Pipeline Recovery",
-    tagline:
-      "Automated monitoring systems that detect pipeline failures, analyze runtime context, and generate corrective recovery actions. Reduces manual intervention by enabling self-healing workflows and faster operational recovery.",
-    stack: ["Prefect", "Python", "OpenAI API", "MCP", "Structured logging", "Event-driven workflows"],
-    github: "https://github.com/austindi",
-    inProgress: true,
-  },
-  {
-    title: "Automation for Messy Real-World Data",
-    tagline:
-      "Engineering solutions built to handle unreliable operational inputs, schema drift, and inconsistent vendor formats. Emphasizes validation, observability, and long-term stability to maintain trustworthy data pipelines under real production conditions.",
-    stack: ["Python", "Data validation frameworks", "Prefect monitoring", "SQL", "Snowflake", "Cloud storage (AWS S3)"],
-    github: "https://github.com/austindi",
-  },
-  {
     title: "Prefect Workflow Ecosystem",
     tagline:
       "Internal orchestration platform standardizing how data pipelines are created, deployed, and operated. Includes a custom CLI for initializing new pipelines, automated secret management through Doppler, CI/CD generation, and built-in testing frameworks. Centralizes execution, monitoring, and recovery across ingestion and transformation workflows, improving reliability and reducing operational overhead.",
     stack: ["Prefect", "Python", "Docker", "AWS", "Doppler", "GitHub Actions", "Snowflake"],
-    github: "https://github.com/austindi",
+    link: "/prefect-workflow-ecosystem",
+    inProgress: true,
+  },
+  {
+    title: "RPA Workflow Capture & Execution System",
+    link: "/rpa-workflow-capture",
+    tagline:
+      "Browser-based automation platform designed to convert human operational workflows into executable software processes. Captures user interactions from the browser, transforms them into structured workflow events, and persists them in a semi-structured data model for execution, monitoring, and evolution.",
+    stack: ["TypeScript", "Chrome Extension APIs", "Nuxt", "Python", "Prefect", "REST APIs", "OpenAI API", "Semi-Structured Data Modeling"],
+    inProgress: true,
+  },
+  {
+    title: "Agentic Repair & Pipeline Recovery",
+    link: "/agentic-repair",
+    tagline:
+      "Automated reliability system that detects pipeline failures, analyzes execution context, and provides corrective recovery actions through an AI-assisted operations layer. Transforms orchestration telemetry into structured diagnostic signals consumable by LLM agents via MCP.",
+    stack: ["Prefect", "Python", "OpenAI API", "MCP", "Structured Logging", "Event-Driven Workflows", "Observability Systems"],
     inProgress: true,
   },
   {
@@ -302,7 +305,7 @@ const projects = [
     tagline:
       "Automated monitoring system that analyzes Prefect workflow logs to detect warnings and incomplete processing events. An LLM summarizes operational issues, identifies potential data gaps, and delivers daily diagnostic reports, improving visibility and reducing unnoticed pipeline failures.",
     stack: ["Prefect", "Python", "OpenAI API", "MCP", "Structured Logging", "Email Automation"],
-    github: "https://github.com/austindi",
+    link: "/ai-driven-pipeline-observability",
     inProgress: true,
   },
   {
@@ -310,30 +313,35 @@ const projects = [
     tagline:
       "Operational monitoring system that detects workflow failures and automatically generates Linear tickets with execution context, reducing manual triage and improving response time. Tracks per-customer flow runtime and resource usage to provide visibility into operational cost and performance across data pipelines.",
     stack: ["Prefect", "Python", "OpenAI API", "MCP", "Linear API", "Structured Logging", "AWS", "Snowflake"],
-    github: "https://github.com/austindi",
+    link: "/workflow-observability-incident-automation",
   },
   {
     title: "Data Ingestion & Normalization Platform",
     tagline:
       "Resilient ingestion pipelines designed for inconsistent APIs, logistics feeds, and spreadsheet data. Standardizes heterogeneous inputs into structured, analytics-ready datasets, enabling reliable downstream reporting and decision-making.",
     stack: ["Python", "Pandas", "Databricks", "SQL", "Snowflake", "REST APIs", "OpenAI API (LLM-assisted normalization)", "Parquet"],
-    github: "https://github.com/austindi",
+    link: "/data-ingestion-normalization-platform",
   },
   {
     title: "HPC Orchestration Pipelines",
     tagline:
       "Distributed workflow systems for large-scale scientific computation and simulation execution. Automated job scheduling, monitoring, and data generation across HPC environments, enabling reproducible research workflows and efficient resource utilization at scale.",
     stack: ["Python", "SLURM", "Bash", "Linux", "VASP", "Quantum ESPRESSO", "SSH/SCP"],
-    github: "https://github.com/austindi",
+    link: "/hpc-orchestration-pipelines",
   },
   {
     title: "STM/STS Simulation & Analysis Platform",
     tagline:
       "Developed a computational pipeline to simulate scanning tunneling microscopy (STM) and spectroscopy (STS) measurements directly from density functional theory (DFT) calculations. The system automated post-processing, visualization, and comparison between theoretical models and experimental data, enabling reproducible analysis of nanoscale electronic structure.",
     stack: ["Python", "ASE", "VASP", "Quantum ESPRESSO", "HPC (SLURM)", "NumPy", "Matplotlib"],
-    github: "https://github.com/austindi",
+    link: "/stm-sts-simulation-analysis-platform",
   },
 ];
+
+const showAllProjects = ref(false);
+const visibleProjects = computed(() =>
+  showAllProjects.value ? projects : projects.slice(0, 3)
+);
 
 const education = [
   { degree: "Ph.D. in Physics", institution: "University of Central Florida", field: "Computational physics, density functional theory", date: "Aug 2018 – Aug 2024", dissertation: "First Principles Studies of Nano-Scale Phenomena At Surfaces: From Characteristics of Single Atom Catalysts to Molecular Structure Formation", dissertation_link: "https://stars.library.ucf.edu/cgi/viewcontent.cgi?article=1500&context=etd2023", diploma_link: "" },
@@ -384,9 +392,13 @@ const tocItems = [
   margin-top: 28px;
 }
 
+.projects-toggle {
+  margin-top: 20px;
+}
+
 .page-with-toc {
   display: grid;
-  grid-template-columns: 1fr 300px;
+  grid-template-columns: 1fr 380px;
   gap: 48px;
   align-items: start;
 }
@@ -394,6 +406,12 @@ const tocItems = [
 @media (max-width: 1020px) {
   .page-with-toc {
     grid-template-columns: 1fr;
+  }
+
+  .page-with-toc__sidebar {
+    order: -1;
+    position: static;
+    max-height: none;
   }
 }
 </style>

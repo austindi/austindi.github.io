@@ -258,7 +258,14 @@
       </div>
     </footer>
     </main>
-    <PageToc :items="tocItems" />
+    <aside class="page-with-toc__sidebar index-sidebar">
+      <div class="index-sidebar__inner">
+        <div class="hero__photo" aria-label="Dave Austin portrait"></div>
+        <div class="index-sidebar__toc-wrap">
+          <PageToc :items="tocItems" />
+        </div>
+      </div>
+    </aside>
   </div>
 </template>
 
@@ -789,7 +796,7 @@ onBeforeUnmount(() => {
 
 .page-with-toc {
   display: grid;
-  grid-template-columns: 1fr 300px;
+  grid-template-columns: 1fr 380px;
   gap: 48px;
   align-items: start;
 }
@@ -797,6 +804,12 @@ onBeforeUnmount(() => {
 @media (max-width: 1020px) {
   .page-with-toc {
     grid-template-columns: 1fr;
+  }
+
+  .page-with-toc__sidebar {
+    order: -1;
+    position: static;
+    max-height: none;
   }
 }
 </style>
