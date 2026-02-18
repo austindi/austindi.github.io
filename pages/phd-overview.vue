@@ -2,6 +2,9 @@
   <div>
     <section class="section hero">
       <div class="container">
+        <div class="page-header">
+          <BackButton />
+        </div>
         <h1 class="h1">Physics Career Overview</h1>
         <p class="section__desc" style="max-width: 60ch">
           Peer-reviewed publications, oral presentations, and poster presentations from my doctoral research in computational physics.
@@ -281,5 +284,9 @@ onBeforeUnmount(() => {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+.page-header {
+  margin-bottom: 20px;
 }
 </style>

@@ -2,9 +2,9 @@
   <div class="photos-page">
     <div class="container">
       <header class="photos-page__head">
+        <BackButton />
         <h1 class="photos-page__title">Gallery</h1>
         <p class="section__desc">A few pictures from work, travel, and life.</p>
-        <NuxtLink to="/" class="btn">← Back to home</NuxtLink>
       </header>
       <div v-if="images.length" class="photos-grid">
         <div
@@ -62,8 +62,8 @@ onMounted(async () => {
   margin: 0 0 8px;
 }
 
-.photos-page__head .btn {
-  margin-top: 16px;
+.photos-page__head :deep(.back-btn) {
+  margin-bottom: 20px;
   display: inline-block;
 }
 
