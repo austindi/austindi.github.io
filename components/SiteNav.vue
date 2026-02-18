@@ -8,12 +8,12 @@
       <div class="navlinks">
         <NuxtLink to="/">Home</NuxtLink>
         <a href="/#experience">Experience</a>
-        <a href="/#projects">Projects</a>
+        <a href="/#projects">Systems I've Built</a>
         <a href="/#skills">Skills</a>
         <a href="/#education">Education</a>
         <a href="/#certifications">Certifications</a>
         <NuxtLink to="/blogs" active-class="active">Blogs</NuxtLink>
-        <NuxtLink to="/phd-overview" active-class="active">Physics Career Overview</NuxtLink>
+        <NuxtLink to="/phd-overview" active-class="active">Scientific Background & Research Foundations</NuxtLink>
       </div>
     </div>
   </nav>

@@ -5,7 +5,7 @@
         <div class="page-header">
           <BackButton />
         </div>
-        <h1 class="h1">Physics Career Overview</h1>
+        <h1 class="h1">Scientific Background & Research Foundations</h1>
         <p class="section__desc" style="max-width: 60ch">
           Peer-reviewed publications, oral and poster presentations, and leadership roles from my doctoral research in computational physics.
         </p>
@@ -244,7 +244,7 @@
 
 <script setup lang="ts">
 definePageMeta({
-  title: "Physics Career Overview — Dave Austin",
+  title: "Scientific Background & Research Foundations — Dave Austin",
   description: "Peer-reviewed publications, oral and poster presentations",
 });
 

@@ -24,9 +24,12 @@
               Across both research and industry, I apply a scientific approach to engineering — emphasizing measurable
               outcomes, systematic debugging, and systems built for long-term reliability.
             </p>
+            <p>
+              My background in computational physics shaped how I design reliable, measurable data systems.
+            </p>
           </div>
           <div class="cta">
-            <NuxtLink to="/phd-overview" class="btn btn--primary">Physics Career Overview</NuxtLink>
+            <NuxtLink to="/phd-overview" class="btn btn--primary">Scientific Background & Research Foundations</NuxtLink>
             <NuxtLink to="/blogs" class="btn">Blogs</NuxtLink>
             <a href="/Dave_Austin_Resume.pdf" class="btn">Download Resume</a>
           </div>
@@ -106,11 +109,11 @@
       </div>
     </section>
 
-    <!-- Projects -->
+    <!-- Systems I've Built -->
     <section id="projects" class="section">
       <div class="container">
         <div class="section__head">
-          <h2 class="section__title">Projects</h2>
+          <h2 class="section__title">Systems I've Built</h2>
           <p class="section__desc">
             Selected work in data engineering, automation, and ML.
           </p>
@@ -228,34 +231,71 @@ definePageMeta({
 
 const projects = [
   {
-    title: "2PL Data Pipeline",
+    title: "RPA Workflow Capture & Execution System",
     tagline:
-      "Scalable logistics ETL using Python, Prefect, AWS Lambda, and Snowflake. Automated shipment ingestion and reduced processing time by 80%.",
-    stack: ["Python", "Prefect", "AWS Lambda", "Snowflake", "S3"],
-    link: "/projects/2pl",
-    github: "https://github.com/your-handle/2pl",
+      "Browser-based automation platform that records human workflows and converts them into executable processes. Enables scalable automation of legacy systems and manual operations, bridging human actions with programmable data pipelines.",
+    stack: ["TypeScript", "Chrome Extension APIs", "Nuxt", "Python", "Prefect", "JSON workflow models", "REST APIs", "OpenAI API (LLM-assisted workflow repair)"],
+    github: "https://github.com/austindi",
+    inProgress: true,
   },
   {
-    title: "Automated Bid Classification",
+    title: "Agentic Repair & Pipeline Recovery",
     tagline:
-      "ML classifier integrated into ETL to label shipping bids in real time, cutting manual review by 70%.",
-    stack: ["Python", "sklearn", "Pandas", "ETL"],
-    link: "/projects/bid-classifier",
-    github: "https://github.com/your-handle/bid-classifier",
+      "Automated monitoring systems that detect pipeline failures, analyze runtime context, and generate corrective recovery actions. Reduces manual intervention by enabling self-healing workflows and faster operational recovery.",
+    stack: ["Prefect", "Python", "OpenAI API", "Structured logging", "Event-driven workflows"],
+    github: "https://github.com/austindi",
+    inProgress: true,
   },
   {
-    title: "HPC Simulation Orchestration",
+    title: "Automation for Messy Real-World Data",
     tagline:
-      "Multi-step orchestration of DFT workloads with SLURM; thousand-job campaigns with robust restart and lineage.",
-    stack: ["Python", "SLURM", "HPC", "ASE"],
-    link: "/projects/hpc-orch",
-    github: "https://github.com/austindi/hpc-orch",
+      "Engineering solutions built to handle unreliable operational inputs, schema drift, and inconsistent vendor formats. Emphasizes validation, observability, and long-term stability to maintain trustworthy data pipelines under real production conditions.",
+    stack: ["Python", "Data validation frameworks", "Prefect monitoring", "SQL", "Snowflake", "Cloud storage (AWS S3)"],
+    github: "https://github.com/austindi",
   },
   {
-    title: "Simulated Scanning Tunneling Spectroscopy Data",
+    title: "Prefect Workflow Ecosystem",
     tagline:
-      "Bridged DFT simulations with experimental STS data to enable direct comparison between theory and scanning tunneling spectroscopy measurements.",
-    stack: ["Python", "DFT", "VASP", "ASE"],
+      "Internal orchestration platform standardizing how data pipelines are created, deployed, and operated. Includes a custom CLI for initializing new pipelines, automated secret management through Doppler, CI/CD generation, and built-in testing frameworks. Centralizes execution, monitoring, and recovery across ingestion and transformation workflows, improving reliability and reducing operational overhead.",
+    stack: ["Prefect", "Python", "Docker", "AWS", "Doppler", "GitHub Actions", "Snowflake"],
+    github: "https://github.com/austindi",
+    inProgress: true,
+  },
+  {
+    title: "AI-Driven Pipeline Observability",
+    tagline:
+      "Automated monitoring system that analyzes Prefect workflow logs to detect warnings and incomplete processing events. An LLM summarizes operational issues, identifies potential data gaps, and delivers daily diagnostic reports, improving visibility and reducing unnoticed pipeline failures.",
+    stack: ["Prefect", "Python", "OpenAI API", "Structured Logging", "Email Automation"],
+    github: "https://github.com/austindi",
+    inProgress: true,
+  },
+  {
+    title: "Workflow Observability & Incident Automation",
+    tagline:
+      "Operational monitoring system that detects workflow failures and automatically generates Linear tickets with execution context, reducing manual triage and improving response time. Tracks per-customer flow runtime and resource usage to provide visibility into operational cost and performance across data pipelines.",
+    stack: ["Prefect", "Python", "Linear API", "Structured Logging", "AWS", "Snowflake"],
+    github: "https://github.com/austindi",
+  },
+  {
+    title: "Data Ingestion & Normalization Platform",
+    tagline:
+      "Resilient ingestion pipelines designed for inconsistent APIs, logistics feeds, and spreadsheet data. Standardizes heterogeneous inputs into structured, analytics-ready datasets, enabling reliable downstream reporting and decision-making.",
+    stack: ["Python", "Pandas/Polars", "Snowflake", "REST APIs", "OpenAI API (LLM-assisted normalization)", "Parquet"],
+    github: "https://github.com/austindi",
+  },
+  {
+    title: "HPC Orchestration Pipelines",
+    tagline:
+      "Distributed workflow systems for large-scale scientific computation and simulation execution. Automated job scheduling, monitoring, and data generation across HPC environments, enabling reproducible research workflows and efficient resource utilization at scale.",
+    stack: ["Python", "SLURM", "Bash", "Linux", "VASP", "Quantum ESPRESSO", "SSH/SCP"],
+    github: "https://github.com/austindi",
+  },
+  {
+    title: "STM/STS Simulation & Analysis Platform",
+    tagline:
+      "Developed a computational pipeline to simulate scanning tunneling microscopy (STM) and spectroscopy (STS) measurements directly from density functional theory (DFT) calculations. The system automated post-processing, visualization, and comparison between theoretical models and experimental data, enabling reproducible analysis of nanoscale electronic structure.",
+    stack: ["Python", "ASE", "VASP", "Quantum ESPRESSO", "HPC (SLURM)", "NumPy", "Matplotlib"],
+    github: "https://github.com/austindi",
   },
 ];
 
