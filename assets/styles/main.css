@@ -43,6 +43,11 @@ body {
   margin: 0 auto;
 }
 
+/* Scroll margin for table-of-contents anchor links (avoid sticky nav overlap) */
+section[id] {
+  scroll-margin-top: 80px;
+}
+
 a {
   color: var(--accent);
   text-decoration: none;
@@ -130,14 +135,22 @@ button {
   gap: 48px;
   align-items: start;
 }
-.hero__inner > div:first-child {
-  text-align: center;
-}
 @media (max-width: 920px) {
   .hero__inner {
     grid-template-columns: 1fr;
     gap: 32px;
   }
+}
+.hero__below {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid color-mix(in lab, var(--accent) 15%, transparent);
+}
+.hero__below .pills--one-line {
+  margin-top: 0;
 }
 .kicker {
   display: inline-block;
@@ -157,11 +170,15 @@ button {
   font-weight: 800;
   letter-spacing: -0.02em;
 }
+.hero__lead {
+  font-size: 1.15rem;
+  line-height: 1.5;
+  color: var(--text);
+  margin: 0 0 1.25em;
+}
 .hero__sub {
   color: var(--muted);
   max-width: 58ch;
-  margin-left: auto;
-  margin-right: auto;
   font-size: 1.05rem;
   line-height: 1.7;
 }
@@ -174,16 +191,16 @@ button {
 .hero .cta {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 12px;
   margin-top: 28px;
+  justify-content: center;
 }
 .hero .cta__row {
   width: 100%;
   display: flex;
-  justify-content: center;
   gap: 12px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .btn {
   display: inline-flex;
@@ -233,10 +250,16 @@ button {
 /* Hero pills */
 .hero .pills {
   display: flex;
-  justify-content: center;
   gap: 12px;
   flex-wrap: wrap;
   margin-top: 28px;
+  justify-content: center;
+}
+
+.hero .pills--one-line {
+  flex-wrap: nowrap;
+  width: 100%;
+  margin-top: 20px;
 }
 .hero .pill {
   padding: 10px 16px;
@@ -289,6 +312,13 @@ button {
 }
 
 /* ===== Projects grid (Systems I've Built) ===== */
+#projects .pills {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 12px;
+  width: 100%;
+  margin-bottom: 24px;
+}
 .projects {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
