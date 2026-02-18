@@ -448,31 +448,35 @@ onBeforeUnmount(() => {
 </script>
 
 <style scoped>
-/* Hover pop for cards and interactive elements */
+/* Hover pop and border for cards and interactive elements (like project section) */
 .card {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .card:hover {
   transform: scale(1.02);
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+  border-color: #2b445a;
 }
 
 .btn {
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
 .btn:hover {
   transform: scale(1.03);
+  border-color: #2b445a;
 }
 
 .carousel__arrow {
-  transition: transform 0.2s ease, filter 0.15s ease;
+  transition: transform 0.2s ease, filter 0.15s ease, border 0.2s ease;
+  border: 2px solid transparent;
 }
 
 .carousel__arrow:hover {
   transform: scale(1.08);
   filter: brightness(1.1);
+  border-color: #2b445a;
 }
 
 .presentation-list {
@@ -676,7 +680,7 @@ onBeforeUnmount(() => {
   font-size: 20px;
   background: var(--accent);
   color: #042423;
-  border: none;
+  border: 2px solid transparent;
   border-radius: 50%;
   cursor: pointer;
   font-weight: 700;
