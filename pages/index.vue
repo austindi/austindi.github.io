@@ -339,5 +339,7 @@ const showPrefectStats = true; // Set false to hide Task Runs card
 
 .prefect-stats-block {
   margin-top: 28px;
+  display: flex;
+  justify-content: center;
 }
 </style>

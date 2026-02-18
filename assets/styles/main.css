@@ -130,6 +130,9 @@ button {
   gap: 48px;
   align-items: start;
 }
+.hero__inner > div:first-child {
+  text-align: center;
+}
 @media (max-width: 920px) {
   .hero__inner {
     grid-template-columns: 1fr;
@@ -157,6 +160,8 @@ button {
 .hero__sub {
   color: var(--muted);
   max-width: 58ch;
+  margin-left: auto;
+  margin-right: auto;
   font-size: 1.05rem;
   line-height: 1.7;
 }
@@ -169,12 +174,14 @@ button {
 .hero .cta {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 12px;
   margin-top: 28px;
 }
 .hero .cta__row {
   width: 100%;
   display: flex;
+  justify-content: center;
   gap: 12px;
   flex-wrap: wrap;
 }
@@ -226,6 +233,7 @@ button {
 /* Hero pills */
 .hero .pills {
   display: flex;
+  justify-content: center;
   gap: 12px;
   flex-wrap: wrap;
   margin-top: 28px;
