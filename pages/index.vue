@@ -32,7 +32,7 @@
             <NuxtLink to="/phd-overview" class="btn btn--primary">Scientific Background & Research Foundations</NuxtLink>
             <div class="cta__row">
               <NuxtLink to="/blogs" class="btn">Blogs</NuxtLink>
-              <a href="/Resume.pdf" class="btn" download>Download Resume</a>
+              <a href="/Resume.pdf" class="btn" download="dave_austin_resume.pdf">Download Resume</a>
             </div>
           </div>
           <div class="pills">
