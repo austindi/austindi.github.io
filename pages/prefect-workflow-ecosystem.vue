@@ -5,10 +5,10 @@
         <div class="page-header">
           <BackButton />
         </div>
-        <h1 class="h1">Agentic Repair & Pipeline Recovery</h1>
+        <h1 class="h1">Prefect Workflow Ecosystem</h1>
         <span class="project-status">In progress</span>
         <p class="section__desc" style="max-width: 72ch; margin-top: 12px">
-          Automated reliability system that detects pipeline failures, analyzes execution context, and provides corrective recovery actions through an AI-assisted operations layer. Transforms orchestration telemetry into structured diagnostic signals consumable by LLM agents via MCP.
+          Internal orchestration platform standardizing how data pipelines are created, deployed, and operated. Includes a custom CLI for initializing new pipelines, automated secret management through Doppler, CI/CD generation, and built-in testing frameworks. Centralizes execution, monitoring, and recovery across ingestion and transformation workflows, improving reliability and reducing operational overhead.
         </p>
       </div>
     </section>
@@ -17,20 +17,17 @@
       <div class="container">
         <h2 class="section__title">Why This System Exists</h2>
         <p class="section__desc proj-desc">
-          Production data pipelines fail constantly — not because of code bugs, but because real-world systems are unstable:
+          As data pipelines grew, each new workflow introduced slightly different deployment patterns, secret handling, monitoring behavior, and failure recovery logic. Engineers were repeatedly solving the same operational problems — configuring orchestration, wiring credentials, setting up CI/CD, and building monitoring from scratch.
         </p>
+        <p class="section__desc proj-desc">This created:</p>
         <ul class="capability-list">
-          <li>APIs change silently</li>
-          <li>Upstream vendors send malformed data</li>
-          <li>Schemas drift</li>
-          <li>Jobs timeout under load</li>
-          <li>External dependencies degrade unpredictably</li>
+          <li>Inconsistent reliability</li>
+          <li>Difficult onboarding</li>
+          <li>Hidden operational risk</li>
+          <li>Slow delivery of new pipelines</li>
         </ul>
         <p class="section__desc proj-desc">
-          Traditional monitoring only reports failures. Engineers must manually inspect logs, reconstruct context, and determine recovery actions — creating operational bottlenecks and long recovery times.
-        </p>
-        <p class="section__desc proj-desc">
-          This system exists to move from alerting → understanding → assisted recovery.
+          The system exists to turn pipeline development from custom engineering into a standardized platform capability.
         </p>
       </div>
     </section>
@@ -39,10 +36,10 @@
       <div class="container">
         <h2 class="section__title">Goal</h2>
         <p class="section__desc proj-desc">
-          Create an intelligent operational layer that interprets pipeline failures, analyzes execution context, and proposes corrective recovery actions to reduce downtime and manual debugging effort.
+          Provide a unified operational framework where pipelines can be created, deployed, and maintained using consistent patterns that enforce reliability, observability, and reproducibility by default.
         </p>
         <p class="section__desc proj-desc">
-          The objective is not full autonomy, but human-accelerated incident resolution.
+          The objective is not just orchestration — but reducing cognitive overhead for engineers while increasing system stability.
         </p>
       </div>
     </section>
@@ -51,19 +48,23 @@
       <div class="container">
         <h2 class="section__title">System Overview</h2>
         <p class="section__desc proj-desc">
-          The system consumes structured Prefect execution logs, runtime metadata, and failure traces. When workflows fail, contextual signals — task state, error messages, upstream dependencies, and execution history — are aggregated into diagnostic payloads.
+          The Prefect Workflow Ecosystem acts as an internal platform layer governing the full lifecycle of data workflows.
         </p>
         <p class="section__desc proj-desc">
-          These payloads are exposed as tools inside an MCP-enabled LLM agent. The LLM analyzes failure patterns and produces structured recovery recommendations such as:
+          A custom developer CLI initializes pipelines using predefined templates that automatically include:
         </p>
         <ul class="capability-list">
-          <li>Retry strategies</li>
-          <li>Missing data detection</li>
-          <li>Configuration fixes</li>
-          <li>Pipeline reruns with adjusted parameters</li>
+          <li>Orchestration configuration</li>
+          <li>Testing scaffolding</li>
+          <li>Monitoring hooks</li>
+          <li>Deployment workflows</li>
+          <li>Secure secret injection through Doppler</li>
         </ul>
         <p class="section__desc proj-desc">
-          Outputs are converted into actionable signals consumable by operators or automation workflows.
+          Once deployed, Prefect manages execution scheduling, retries, dependency handling, and recovery behavior across ingestion and transformation pipelines. Operational telemetry is centralized, allowing failures and performance issues to be detected quickly.
+        </p>
+        <p class="section__desc proj-desc">
+          This converts pipeline engineering from ad-hoc scripting into a repeatable platform process.
         </p>
       </div>
     </section>
@@ -72,7 +73,7 @@
       <div class="container">
         <h2 class="section__title">Architecture Concept</h2>
         <div class="arch-flow">
-          Prefect Runtime Events → Structured Logging Layer → Failure Context Builder → MCP Tool Interface → LLM Diagnostic Agent → Recovery Recommendations
+          Developer CLI → Standardized Repository Structure → Automated CI/CD Generation → Prefect Deployment → Centralized Monitoring & Recovery Layer
         </div>
       </div>
     </section>
@@ -81,16 +82,16 @@
       <div class="container">
         <h2 class="section__title">Engineering Tradeoffs</h2>
         <div class="tradeoff-block">
-          <h3 class="capability-heading">AI reasoning vs deterministic rules</h3>
-          <p class="section__desc proj-desc">LLM interpretation handles unknown failure modes but introduces probabilistic outputs.</p>
+          <h3 class="capability-heading">Standardization vs Flexibility</h3>
+          <p class="section__desc proj-desc">Enforcing templates reduces creativity but prevents fragile pipeline designs.</p>
         </div>
         <div class="tradeoff-block">
-          <h3 class="capability-heading">Automation vs operator trust</h3>
-          <p class="section__desc proj-desc">Recommendations assist humans rather than executing blindly to maintain safety.</p>
+          <h3 class="capability-heading">Centralized orchestration vs distributed autonomy</h3>
+          <p class="section__desc proj-desc">Improves observability while introducing dependency on orchestration infrastructure.</p>
         </div>
         <div class="tradeoff-block">
-          <h3 class="capability-heading">Context richness vs system overhead</h3>
-          <p class="section__desc proj-desc">Capturing detailed runtime signals improves diagnosis but increases logging complexity.</p>
+          <h3 class="capability-heading">Automation vs transparency</h3>
+          <p class="section__desc proj-desc">Developers move faster, but deeper infrastructure knowledge becomes abstracted.</p>
         </div>
       </div>
     </section>
@@ -99,12 +100,12 @@
       <div class="container">
         <h2 class="section__title">Key Capabilities</h2>
         <ul class="capability-list">
-          <li>Detect pipeline failures automatically</li>
-          <li>Aggregate execution context into diagnostic summaries</li>
-          <li>Interpret logs using LLM reasoning</li>
-          <li>Generate structured recovery suggestions</li>
-          <li>Reduce mean time to resolution (MTTR)</li>
-          <li>Enable future self-healing workflows</li>
+          <li>One-command pipeline initialization</li>
+          <li>Automatic secret provisioning</li>
+          <li>Built-in testing and deployment workflows</li>
+          <li>Consistent retry and recovery behavior</li>
+          <li>Unified monitoring across all workflows</li>
+          <li>Reduced onboarding time for new engineers</li>
         </ul>
       </div>
     </section>
@@ -122,17 +123,18 @@
 
 <script setup lang="ts">
 definePageMeta({
-  title: "Agentic Repair & Pipeline Recovery — Dave Austin",
-  description: "Automated reliability system for pipeline failure detection, diagnosis, and recovery through AI-assisted operations and MCP.",
+  title: "Prefect Workflow Ecosystem — Dave Austin",
+  description: "Internal orchestration platform standardizing how data pipelines are created, deployed, and operated.",
 });
 
 const technologies = [
   "Prefect",
   "Python",
-  "OpenAI API",
-  "MCP",
-  "Structured Logging",
-  "Event-Driven Workflows",
+  "Docker",
+  "AWS",
+  "Doppler",
+  "GitHub Actions",
+  "Snowflake",
 ];
 </script>
 

@@ -5,10 +5,10 @@
         <div class="page-header">
           <BackButton />
         </div>
-        <h1 class="h1">Agentic Repair & Pipeline Recovery</h1>
+        <h1 class="h1">AI-Driven Pipeline Observability</h1>
         <span class="project-status">In progress</span>
         <p class="section__desc" style="max-width: 72ch; margin-top: 12px">
-          Automated reliability system that detects pipeline failures, analyzes execution context, and provides corrective recovery actions through an AI-assisted operations layer. Transforms orchestration telemetry into structured diagnostic signals consumable by LLM agents via MCP.
+          Automated monitoring system that analyzes Prefect workflow logs to detect warnings and incomplete processing events. An LLM summarizes operational issues, identifies potential data gaps, and delivers daily diagnostic reports, improving visibility and reducing unnoticed pipeline failures.
         </p>
       </div>
     </section>
@@ -17,20 +17,13 @@
       <div class="container">
         <h2 class="section__title">Why This System Exists</h2>
         <p class="section__desc proj-desc">
-          Production data pipelines fail constantly — not because of code bugs, but because real-world systems are unstable:
-        </p>
-        <ul class="capability-list">
-          <li>APIs change silently</li>
-          <li>Upstream vendors send malformed data</li>
-          <li>Schemas drift</li>
-          <li>Jobs timeout under load</li>
-          <li>External dependencies degrade unpredictably</li>
-        </ul>
-        <p class="section__desc proj-desc">
-          Traditional monitoring only reports failures. Engineers must manually inspect logs, reconstruct context, and determine recovery actions — creating operational bottlenecks and long recovery times.
+          Traditional monitoring systems surface failures but do not explain them. Engineers are left parsing logs manually, correlating warnings across services, and determining whether missing data represents a true failure or a recoverable condition.
         </p>
         <p class="section__desc proj-desc">
-          This system exists to move from alerting → understanding → assisted recovery.
+          As pipeline complexity grows, operational awareness becomes the bottleneck rather than computation.
+        </p>
+        <p class="section__desc proj-desc">
+          This system exists to convert raw operational telemetry into actionable understanding, reducing cognitive load and enabling faster decision-making.
         </p>
       </div>
     </section>
@@ -39,10 +32,10 @@
       <div class="container">
         <h2 class="section__title">Goal</h2>
         <p class="section__desc proj-desc">
-          Create an intelligent operational layer that interprets pipeline failures, analyzes execution context, and proposes corrective recovery actions to reduce downtime and manual debugging effort.
+          Transform workflow logs and warning signals into structured operational intelligence that identifies risk, summarizes failures, and highlights potential downstream data impact automatically.
         </p>
         <p class="section__desc proj-desc">
-          The objective is not full autonomy, but human-accelerated incident resolution.
+          The objective is to move from monitoring systems to diagnostic systems.
         </p>
       </div>
     </section>
@@ -51,19 +44,19 @@
       <div class="container">
         <h2 class="section__title">System Overview</h2>
         <p class="section__desc proj-desc">
-          The system consumes structured Prefect execution logs, runtime metadata, and failure traces. When workflows fail, contextual signals — task state, error messages, upstream dependencies, and execution history — are aggregated into diagnostic payloads.
+          Prefect workflows continuously collect runtime logs, warnings, and execution metadata across production pipelines. A scheduled analysis flow aggregates these signals and submits structured context to an LLM.
         </p>
         <p class="section__desc proj-desc">
-          These payloads are exposed as tools inside an MCP-enabled LLM agent. The LLM analyzes failure patterns and produces structured recovery recommendations such as:
+          The LLM evaluates:
         </p>
         <ul class="capability-list">
-          <li>Retry strategies</li>
-          <li>Missing data detection</li>
-          <li>Configuration fixes</li>
-          <li>Pipeline reruns with adjusted parameters</li>
+          <li>Warning patterns</li>
+          <li>Skipped or delayed data</li>
+          <li>Abnormal execution behavior</li>
+          <li>Potential business impact</li>
         </ul>
         <p class="section__desc proj-desc">
-          Outputs are converted into actionable signals consumable by operators or automation workflows.
+          The system generates daily operational summaries and sends automated reports outlining detected risks, likely causes, and recommended follow-up actions.
         </p>
       </div>
     </section>
@@ -72,7 +65,7 @@
       <div class="container">
         <h2 class="section__title">Architecture Concept</h2>
         <div class="arch-flow">
-          Prefect Runtime Events → Structured Logging Layer → Failure Context Builder → MCP Tool Interface → LLM Diagnostic Agent → Recovery Recommendations
+          Pipeline Runs → Log & Warning Aggregation → Context Structuring Layer → LLM Analysis → Diagnostic Summaries → Automated Reporting
         </div>
       </div>
     </section>
@@ -81,16 +74,16 @@
       <div class="container">
         <h2 class="section__title">Engineering Tradeoffs</h2>
         <div class="tradeoff-block">
-          <h3 class="capability-heading">AI reasoning vs deterministic rules</h3>
-          <p class="section__desc proj-desc">LLM interpretation handles unknown failure modes but introduces probabilistic outputs.</p>
+          <h3 class="capability-heading">Signal richness vs noise</h3>
+          <p class="section__desc proj-desc">Too many logs overwhelm analysis; aggregation requires intelligent filtering.</p>
+        </div>
+        <div class="tradeoff-block">
+          <h3 class="capability-heading">LLM reasoning vs deterministic alerts</h3>
+          <p class="section__desc proj-desc">AI improves interpretation but must remain advisory rather than authoritative.</p>
         </div>
         <div class="tradeoff-block">
           <h3 class="capability-heading">Automation vs operator trust</h3>
-          <p class="section__desc proj-desc">Recommendations assist humans rather than executing blindly to maintain safety.</p>
-        </div>
-        <div class="tradeoff-block">
-          <h3 class="capability-heading">Context richness vs system overhead</h3>
-          <p class="section__desc proj-desc">Capturing detailed runtime signals improves diagnosis but increases logging complexity.</p>
+          <p class="section__desc proj-desc">Outputs emphasize explanations to maintain human confidence in decisions.</p>
         </div>
       </div>
     </section>
@@ -99,12 +92,12 @@
       <div class="container">
         <h2 class="section__title">Key Capabilities</h2>
         <ul class="capability-list">
-          <li>Detect pipeline failures automatically</li>
-          <li>Aggregate execution context into diagnostic summaries</li>
-          <li>Interpret logs using LLM reasoning</li>
-          <li>Generate structured recovery suggestions</li>
-          <li>Reduce mean time to resolution (MTTR)</li>
-          <li>Enable future self-healing workflows</li>
+          <li>Aggregate warnings across distributed workflows</li>
+          <li>Detect potential missed or incomplete data processing</li>
+          <li>Produce human-readable operational summaries</li>
+          <li>Identify recurring failure patterns</li>
+          <li>Reduce manual log investigation</li>
+          <li>Improve visibility into system health over time</li>
         </ul>
       </div>
     </section>
@@ -122,17 +115,18 @@
 
 <script setup lang="ts">
 definePageMeta({
-  title: "Agentic Repair & Pipeline Recovery — Dave Austin",
-  description: "Automated reliability system for pipeline failure detection, diagnosis, and recovery through AI-assisted operations and MCP.",
+  title: "AI-Driven Pipeline Observability — Dave Austin",
+  description: "Transforms workflow logs into structured operational intelligence through LLM analysis.",
 });
 
 const technologies = [
   "Prefect",
   "Python",
-  "OpenAI API",
-  "MCP",
   "Structured Logging",
-  "Event-Driven Workflows",
+  "OpenAI API",
+  "MCP Integration",
+  "Email Automation",
+  "Event Scheduling",
 ];
 </script>
 

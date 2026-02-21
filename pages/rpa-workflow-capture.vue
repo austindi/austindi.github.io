@@ -8,8 +8,95 @@
         <h1 class="h1">RPA Workflow Capture & Execution System</h1>
         <span class="project-status">In progress</span>
         <p class="section__desc" style="max-width: 72ch; margin-top: 12px">
-          A browser-based automation platform designed to convert human operational workflows into executable software processes. The system captures user interactions directly from the browser, transforms those actions into structured workflow events, and persists them into a semi-structured data model that supports execution, monitoring, and long-term evolution of automated workflows.
+          Browser-based automation platform designed to convert human operational workflows into executable software processes. Captures user interactions from the browser, transforms them into structured workflow events, and persists them in a semi-structured data model for execution, monitoring, and evolution.
         </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section__title">Why This System Exists</h2>
+        <p class="section__desc proj-desc">
+          Many business-critical workflows live inside legacy web systems with no APIs. Operations teams perform repetitive manual actions daily — copying data between systems, navigating dashboards, downloading reports, and triggering processes by hand.
+        </p>
+        <p class="section__desc proj-desc">Traditional automation fails because:</p>
+        <ul class="capability-list">
+          <li>APIs don't exist</li>
+          <li>Interfaces change frequently</li>
+          <li>Workflows vary between users</li>
+          <li>Rigid scripts break easily</li>
+        </ul>
+        <p class="section__desc proj-desc">
+          This system exists to convert human operational knowledge into executable infrastructure.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section__title">Goal</h2>
+        <p class="section__desc proj-desc">
+          Bridge the gap between manual business operations and programmable automation by allowing workflows to be captured directly from user behavior and executed as resilient backend processes.
+        </p>
+        <p class="section__desc proj-desc">
+          The long-term aim is to transform undocumented human procedures into structured, scalable automation assets.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section__title">System Overview</h2>
+        <p class="section__desc proj-desc">
+          A Chrome extension records user interactions inside the browser — clicks, inputs, navigation, and contextual events. These actions are normalized into workflow events and stored in a semi-structured database rather than static scripts.
+        </p>
+        <p class="section__desc proj-desc">
+          Execution services written in Python replay workflows through orchestrated automation pipelines managed by Prefect. Because real-world interfaces change, an LLM-assisted repair layer analyzes failures and proposes adjustments when workflows break.
+        </p>
+        <p class="section__desc proj-desc">
+          This allows automation to adapt instead of failing catastrophically.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section__title">Architecture Concept</h2>
+        <div class="arch-flow">
+          Browser Interaction Capture → Event Normalization Layer → Semi-Structured Workflow Store → Prefect Execution Engine → LLM Repair & Adaptation
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section__title">Engineering Tradeoffs</h2>
+        <div class="tradeoff-block">
+          <h3 class="capability-heading">Flexible capture vs schema stability</h3>
+          <p class="section__desc proj-desc">Capturing unknown workflows requires loose structure initially.</p>
+        </div>
+        <div class="tradeoff-block">
+          <h3 class="capability-heading">Adaptive AI repair vs deterministic automation</h3>
+          <p class="section__desc proj-desc">Resilience improves, but behavior becomes probabilistic.</p>
+        </div>
+        <div class="tradeoff-block">
+          <h3 class="capability-heading">Rapid recording vs long-term maintainability</h3>
+          <p class="section__desc proj-desc">Easy onboarding introduces later normalization complexity.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section__title">Key Capabilities</h2>
+        <ul class="capability-list">
+          <li>Record workflows directly from user behavior</li>
+          <li>Convert manual processes into executable pipelines</li>
+          <li>Store workflows as queryable data models</li>
+          <li>Execute automation with retries and monitoring</li>
+          <li>Adapt to UI changes using AI-assisted repair</li>
+          <li>Integrate legacy systems without APIs</li>
+        </ul>
       </div>
     </section>
 
@@ -21,54 +108,6 @@
         </div>
       </div>
     </section>
-
-    <section class="section">
-      <div class="container">
-        <h2 class="section__title">Goal</h2>
-        <p class="section__desc proj-desc">
-          The goal of the system is to bridge manual business operations and programmable data infrastructure, enabling automation of legacy systems and repetitive workflows that lack APIs or structured integrations.
-        </p>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <h2 class="section__title">System Overview</h2>
-        <p class="section__desc proj-desc">
-          The platform records user actions through a Chrome extension and translates them into normalized workflow steps. These steps are stored in a semi-structured database rather than static scripts, allowing workflows to be queried, modified, versioned, and executed programmatically.
-        </p>
-        <p class="section__desc proj-desc">
-          Execution is handled by Python services orchestrated with Prefect, enabling retries, monitoring, scheduling, and operational visibility. When workflows fail due to UI or structural changes, an LLM-assisted repair layer analyzes failures and proposes corrective adjustments, improving resilience in unstable real-world environments.
-        </p>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <h2 class="section__title">Engineering Tradeoffs</h2>
-        <ul class="tradeoff-list">
-          <li><strong>Flexible capture vs rigid schema</strong> — workflows are initially stored with flexible structure to support unknown user behaviors, accepting later normalization complexity.</li>
-          <li><strong>JSON as interchange layer</strong> — JSON enables rapid recording and portability, while long-term persistence uses structured storage for scalability and querying.</li>
-          <li><strong>Adaptive recovery vs deterministic automation</strong> — LLM-assisted repair improves robustness when external systems change, trading strict determinism for operational resilience.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <h2 class="section__title">Key Capabilities</h2>
-        <ul class="capability-list">
-          <li>Capture browser interactions as structured workflow events</li>
-          <li>Normalize recorded actions into reusable execution models</li>
-          <li>Persist workflows in a semi-structured database for querying and version control</li>
-          <li>Execute automation pipelines through orchestrated backend services</li>
-          <li>Integrate legacy web systems into modern data workflows</li>
-          <li>Automatically detect and diagnose workflow failures using LLM analysis</li>
-          <li>Enable scalable automation without requiring direct API access</li>
-        </ul>
-      </div>
-    </section>
-
   </div>
 </template>
 
@@ -85,9 +124,8 @@ const technologies = [
   "Python",
   "Prefect",
   "REST APIs",
-  "Semi-Structured Data Modeling",
   "OpenAI API",
-  "Workflow Orchestration",
+  "Semi-Structured Data Modeling",
   "GitHub",
 ];
 </script>
@@ -133,21 +171,44 @@ const technologies = [
   font-weight: 500;
 }
 
-.tradeoff-list,
+.tradeoff-block {
+  margin-bottom: 24px;
+}
+
+.tradeoff-block:last-child {
+  margin-bottom: 0;
+}
+
+.capability-heading {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0 0 8px;
+  color: var(--text);
+}
+
 .capability-list {
   max-width: 72ch;
   line-height: 1.65;
-  margin: 0;
+  margin: 0 0 16px;
   padding-left: 1.5em;
 }
 
-.tradeoff-list li,
 .capability-list li {
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
-.tradeoff-list li:last-child,
 .capability-list li:last-child {
   margin-bottom: 0;
+}
+
+.arch-flow {
+  max-width: 72ch;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--muted);
+  padding: 16px;
+  background: var(--hover-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
 }
 </style>

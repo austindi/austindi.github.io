@@ -78,10 +78,10 @@
         <div>
           <div class="section__head">
             <h2 class="section__title">Representative Systems</h2>
-            <p class="section__desc">
-              Selected work in data engineering, automation, and ML.
-            </p>
           </div>
+          <p class="section__desc" style="margin-top: -8px; margin-bottom: 18px">
+            These systems were developed across research computing, production data engineering, and applied AI environments. While independent, they share a common goal: transforming unreliable processes, messy inputs, and complex workflows into stable, observable, and reproducible systems.
+          </p>
           <div class="projects">
             <ProjectCard v-for="p in visibleProjects" :key="p.title" :project="p" />
           </div>
@@ -181,31 +181,35 @@
           <div class="card skills-card">
             <div class="skills-row">
               <div class="skills-item">
-                <strong>Cloud</strong>
-                <p class="section__desc">AWS (Lambda, S3, EC2), GCP</p>
-              </div>
-              <div class="skills-item">
-                <strong>Data</strong>
-                <p class="section__desc">Pandas, NumPy, Snowflake, Databricks, Fivetran, DuckDB, MongoDB, Firestore,
-                  Parquet, REST APIs, OpenAI API, Linear API</p>
-              </div>
-              <div class="skills-item">
                 <strong>Languages</strong>
-                <p class="section__desc">Python, SQL, C++, Fortran, JavaScript, TypeScript, MATLAB, Mathematica, Shell
-                  scripting, Bash</p>
+                <p class="section__desc">Python, SQL, TypeScript, JavaScript, C++, Fortran, MATLAB, Mathematica, Bash / Shell Scripting</p>
+              </div>
+              <div class="skills-item">
+                <strong>Data Platforms & Processing</strong>
+                <p class="section__desc">Snowflake, Databricks, DuckDB, Pandas, NumPy, Parquet, REST APIs, Fivetran, MongoDB, Firestore, Linear API</p>
+              </div>
+              <div class="skills-item">
+                <strong>AI & Intelligent Systems</strong>
+                <p class="section__desc">LLM integration (OpenAI API), RAG concepts, LLM-assisted automation, workflow diagnostics, agentic monitoring systems, structured prompt pipelines</p>
               </div>
             </div>
             <div class="skills-row">
               <div class="skills-item">
-                <strong>Orchestration</strong>
-                <p class="section__desc">Prefect, SLURM</p>
+                <strong>Cloud & Infrastructure</strong>
+                <p class="section__desc">AWS (Lambda, S3, EC2), GCP, Docker, Linux, GitHub Actions, Doppler</p>
               </div>
               <div class="skills-item">
-                <strong>Infra</strong>
-                <p class="section__desc">GitHub Actions, Docker, Doppler, Linux</p>
+                <strong>Orchestration & Distributed Systems</strong>
+                <p class="section__desc">Prefect, SLURM, workflow orchestration, event-driven pipelines, distributed compute workflows</p>
               </div>
               <div class="skills-item">
-                <strong>Visualization & frameworks</strong>
+                <strong>Data Engineering & Reliability</strong>
+                <p class="section__desc">ETL/ELT pipelines, ingestion & normalization, schema evolution, observability, structured logging, automated recovery systems</p>
+              </div>
+            </div>
+            <div class="skills-row">
+              <div class="skills-item">
+                <strong>Visualization & Application Frameworks</strong>
                 <p class="section__desc">Plotly, Matplotlib, Nuxt</p>
               </div>
             </div>
@@ -330,11 +334,11 @@ const projects = [
     link: "/workflow-observability-incident-automation",
   },
   {
-    title: "Data Ingestion & Normalization Platform",
+    title: "Automation for Messy Real-World Data",
     tagline:
       "Resilient ingestion pipelines designed for inconsistent APIs, logistics feeds, and spreadsheet data. Standardizes heterogeneous inputs into structured, analytics-ready datasets, enabling reliable downstream reporting and decision-making.",
-    stack: ["Python", "Pandas", "Databricks", "SQL", "Snowflake", "REST APIs", "OpenAI API (LLM-assisted normalization)", "Parquet"],
-    link: "/data-ingestion-normalization-platform",
+    stack: ["Python", "Pandas/Polars", "Snowflake", "SQL", "REST APIs", "AWS S3", "OpenAI API (LLM-assisted normalization)", "Parquet"],
+    link: "/automation-messy-data",
   },
   {
     title: "HPC Orchestration Pipelines",

@@ -6,8 +6,23 @@
           <BackButton />
         </div>
         <h1 class="h1">Automation for Messy Real-World Data</h1>
+        <p class="section__desc" style="max-width: 72ch; margin-top: 12px">
+          Resilient ingestion pipelines designed for inconsistent APIs, logistics feeds, and spreadsheet data. Standardizes heterogeneous inputs into structured, analytics-ready datasets, enabling reliable downstream reporting and decision-making.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section__title">Why This System Exists</h2>
         <p class="section__desc proj-desc">
-          A resilience-focused data ingestion and normalization system designed to make unreliable external data usable in production environments. The platform transforms inconsistent vendor inputs into validated, structured datasets while preserving observability and long-term pipeline stability.
+          Most real operational data is not clean, stable, or well-defined. Vendor feeds change formats, APIs return incomplete records, spreadsheets contain hidden assumptions, and schemas evolve without notice.
+        </p>
+        <p class="section__desc proj-desc">
+          Traditional pipelines assume structured inputs. Real businesses operate on inconsistent data sources that break deterministic systems.
+        </p>
+        <p class="section__desc proj-desc">
+          This platform exists to transform unreliable inputs into trustworthy, analytics-ready datasets without constant manual intervention.
         </p>
       </div>
     </section>
@@ -16,7 +31,10 @@
       <div class="container">
         <h2 class="section__title">Goal</h2>
         <p class="section__desc proj-desc">
-          Ensure business-critical data pipelines remain reliable despite inconsistent schemas, incomplete records, and unpredictable real-world data sources. The system prioritizes data trustworthiness by detecting issues early and preventing silent data corruption.
+          Build resilient ingestion and validation infrastructure capable of continuously normalizing inconsistent operational data while preserving correctness, traceability, and long-term maintainability.
+        </p>
+        <p class="section__desc proj-desc">
+          The objective is reliability under uncertainty, not perfect upstream data.
         </p>
       </div>
     </section>
@@ -25,14 +43,61 @@
       <div class="container">
         <h2 class="section__title">System Overview</h2>
         <p class="section__desc proj-desc">
-          This system provides a structured ingestion and validation layer for operational data coming from APIs, logistics feeds, spreadsheets, and third-party vendors. Instead of assuming clean inputs, pipelines are designed around failure tolerance — automatically detecting schema drift, malformed records, and missing data before downstream processing occurs.
+          The system ingests data from APIs, logistics platforms, spreadsheets, and third-party integrations. Incoming data passes through layered validation and normalization stages that:
         </p>
-        <p class="section__desc proj-desc" style="margin-top: 12px">
-          Validation rules, monitoring signals, and normalization logic convert heterogeneous inputs into consistent warehouse-ready datasets stored in Snowflake. Observability tooling enables rapid diagnosis when upstream systems change unexpectedly.
+        <ul class="capability-list">
+          <li>Detect schema drift</li>
+          <li>Validate required business constraints</li>
+          <li>Standardize naming and structure</li>
+          <li>Flag ambiguous or incomplete records</li>
+        </ul>
+        <p class="section__desc proj-desc">
+          LLM-assisted normalization is used selectively where deterministic rules fail — particularly for semi-structured or human-generated inputs.
         </p>
-        <p class="section__desc proj-desc" style="margin-top: 12px">
-          The result is a stable interface between chaotic external systems and reliable internal analytics platforms.
+        <p class="section__desc proj-desc">
+          Processed data is stored in Snowflake as standardized models supporting reporting, analytics, and downstream automation.
         </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section__title">Architecture Concept</h2>
+        <div class="arch-flow">
+          External Sources (APIs, files, vendors) → Ingestion Pipelines → Validation & Schema Detection → Normalization Layer → Structured Data Models → Analytics & Reporting Systems
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section__title">Engineering Tradeoffs</h2>
+        <div class="tradeoff-block">
+          <h3 class="capability-heading">Strict validation vs ingestion continuity</h3>
+          <p class="section__desc proj-desc">Rejecting bad data protects quality but risks blocking operations.</p>
+        </div>
+        <div class="tradeoff-block">
+          <h3 class="capability-heading">Rule-based logic vs adaptive interpretation</h3>
+          <p class="section__desc proj-desc">LLM assistance improves flexibility but requires guardrails.</p>
+        </div>
+        <div class="tradeoff-block">
+          <h3 class="capability-heading">Early normalization vs downstream flexibility</h3>
+          <p class="section__desc proj-desc">Standardizing early simplifies analytics but increases pipeline complexity.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section__title">Key Capabilities</h2>
+        <ul class="capability-list">
+          <li>Handle schema drift and inconsistent vendor formats</li>
+          <li>Normalize semi-structured operational inputs</li>
+          <li>Validate business-critical fields automatically</li>
+          <li>Detect missing or ambiguous data conditions</li>
+          <li>Maintain analytics-ready datasets despite unstable upstream systems</li>
+          <li>Enable scalable ingestion without manual cleanup</li>
+        </ul>
       </div>
     </section>
 
@@ -44,50 +109,25 @@
         </div>
       </div>
     </section>
-
-    <section class="section">
-      <div class="container">
-        <h2 class="section__title">Engineering Tradeoffs</h2>
-        <ul class="tradeoff-list">
-          <li><strong>Strict Validation vs Data Availability</strong> — Rejecting bad data improves integrity but risks delayed reporting; selective quarantine pipelines were implemented instead.</li>
-          <li><strong>Schema Flexibility vs Warehouse Stability</strong> — Flexible ingestion handles vendor variability while normalization enforces consistent downstream schemas.</li>
-          <li><strong>Early Failure Detection vs Pipeline Throughput</strong> — Additional validation steps slightly increase runtime but significantly reduce downstream debugging cost.</li>
-          <li><strong>Automation vs Manual Exception Handling</strong> — Automated detection handles most issues while allowing controlled human review for edge cases.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <h2 class="section__title">Key Capabilities</h2>
-        <ul class="capability-list">
-          <li>Handles schema drift and inconsistent vendor formats</li>
-          <li>Normalizes structured and semi-structured datasets</li>
-          <li>Performs automated validation and anomaly detection</li>
-          <li>Prevents silent data loss through monitoring and alerts</li>
-          <li>Produces analytics-ready Snowflake datasets</li>
-          <li>Maintains observability across ingestion workflows</li>
-          <li>Supports scalable storage and reprocessing via S3</li>
-        </ul>
-      </div>
-    </section>
   </div>
 </template>
 
 <script setup lang="ts">
 definePageMeta({
   title: "Automation for Messy Real-World Data — Dave Austin",
-  description: "Resilience-focused data ingestion and normalization system for unreliable external data sources.",
+  description: "Resilient data ingestion and normalization for inconsistent operational data sources.",
 });
 
 const technologies = [
   "Python",
-  "SQL",
+  "Pandas/Polars",
   "Snowflake",
-  "Prefect",
+  "SQL",
+  "REST APIs",
   "AWS S3",
-  "Data Validation Frameworks",
-  "Structured Monitoring",
+  "Prefect Monitoring",
+  "OpenAI API (LLM-assisted normalization)",
+  "Parquet",
 ];
 </script>
 
@@ -118,21 +158,44 @@ const technologies = [
   font-weight: 500;
 }
 
-.tradeoff-list,
+.tradeoff-block {
+  margin-bottom: 24px;
+}
+
+.tradeoff-block:last-child {
+  margin-bottom: 0;
+}
+
+.capability-heading {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0 0 8px;
+  color: var(--text);
+}
+
 .capability-list {
   max-width: 72ch;
   line-height: 1.65;
-  margin: 0;
+  margin: 0 0 16px;
   padding-left: 1.5em;
 }
 
-.tradeoff-list li,
 .capability-list li {
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
-.tradeoff-list li:last-child,
 .capability-list li:last-child {
   margin-bottom: 0;
+}
+
+.arch-flow {
+  max-width: 72ch;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--muted);
+  padding: 16px;
+  background: var(--hover-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
 }
 </style>
