@@ -8,7 +8,7 @@
       <div class="navlinks">
         <NuxtLink to="/">Home</NuxtLink>
         <a href="/#experience">Experience</a>
-        <a href="/#projects">Systems I've Built</a>
+        <a href="/#projects">Representative Systems</a>
         <a href="/#skills">Skills</a>
         <a href="/#education">Education</a>
         <a href="/#certifications">Certifications</a>

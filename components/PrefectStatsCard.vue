@@ -1,6 +1,6 @@
 <template>
   <article class="prefect-card card">
-    <h3 class="prefect-card__title">Pipeline metrics</h3>
+    <h3 class="prefect-card__title">Production Systems Snapshot</h3>
     <div v-if="stats" class="prefect-card__body">
       <p class="prefect-card__updated">
         Last updated: {{ formatDate(stats.updated_at) }}
@@ -28,7 +28,7 @@
       </div>
     </div>
     <div v-else class="prefect-card__body">
-      <p v-if="loadError" class="section__desc prefect-card__error">Unable to load pipeline metrics.</p>
+      <p v-if="loadError" class="section__desc prefect-card__error">Unable to load production systems snapshot.</p>
       <p v-else class="section__desc">Loading…</p>
     </div>
   </article>

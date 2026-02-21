@@ -203,6 +203,16 @@ button {
 .hero__sub p:last-child {
   margin-bottom: 0;
 }
+.hero__sub-list {
+  margin: 0 0 1.25em;
+  padding-left: 1.4em;
+}
+.hero__sub-list li {
+  margin-bottom: 0.4em;
+}
+.hero__sub-list li:last-child {
+  margin-bottom: 0;
+}
 .hero .cta {
   display: flex;
   flex-wrap: wrap;
@@ -370,7 +380,7 @@ button {
   font-weight: 600;
 }
 
-/* ===== Projects grid (Systems I've Built) ===== */
+/* ===== Projects grid (Representative Systems) ===== */
 #projects .pills {
   display: flex;
   flex-wrap: nowrap;
@@ -433,6 +443,23 @@ button {
   color: var(--text);
 }
 
+/* When one project is active, push others behind it */
+.projects:has(.project:hover) .project,
+.projects:has(.project:focus-within) .project {
+  opacity: 0.28;
+  filter: blur(1px);
+  transform: scale(0.98);
+  z-index: 1;
+}
+
+.projects:has(.project:hover) .project:hover,
+.projects:has(.project:focus-within) .project:focus-within {
+  opacity: 1;
+  filter: none;
+  transform: none;
+  z-index: 20;
+}
+
 /* ===== Timeline ===== */
 .timeline {
   display: grid;
@@ -447,7 +474,29 @@ button {
   background: linear-gradient(180deg, var(--panel), var(--bg-soft));
   border-radius: 12px;
   opacity: 0.85;
-  transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.2s ease, opacity 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  position: relative;
+  z-index: 1;
+}
+
+/* Experience & Education: dim others when one is hovered */
+#experience .timeline:has(.timeline__item:hover) .timeline__item,
+#experience .timeline:has(.timeline__item:focus-within) .timeline__item,
+#education .timeline:has(.timeline__item:hover) .timeline__item,
+#education .timeline:has(.timeline__item:focus-within) .timeline__item {
+  opacity: 0.28;
+  filter: blur(1px);
+  transform: scale(0.98);
+}
+
+#experience .timeline:has(.timeline__item:hover) .timeline__item:hover,
+#experience .timeline:has(.timeline__item:focus-within) .timeline__item:focus-within,
+#education .timeline:has(.timeline__item:hover) .timeline__item:hover,
+#education .timeline:has(.timeline__item:focus-within) .timeline__item:focus-within {
+  opacity: 1;
+  filter: none;
+  transform: scale(1.02);
+  z-index: 20;
 }
 
 .timeline__item:hover {
@@ -484,6 +533,63 @@ button {
 
 .timeline__bullets li:last-child {
   margin-bottom: 0;
+}
+
+/* Science page: dim others when one card is hovered */
+#research .research-experience:has(.research-card:hover) .research-card,
+#research .research-experience:has(.research-card:focus-within) .research-card,
+#grants-awards .awards-list:has(.award-card:hover) .award-card,
+#grants-awards .awards-list:has(.award-card:focus-within) .award-card,
+#oral .presentation-list:has(.presentation-card:hover) .presentation-card,
+#oral .presentation-list:has(.presentation-card:focus-within) .presentation-card,
+#posters .presentation-list:has(.presentation-card:hover) .presentation-card,
+#posters .presentation-list:has(.presentation-card:focus-within) .presentation-card,
+#leadership .leadership-list:has(.leadership-card:hover) .leadership-card,
+#leadership .leadership-list:has(.leadership-card:focus-within) .leadership-card {
+  opacity: 0.28;
+  filter: blur(1px);
+  transform: scale(0.98);
+}
+
+#research .research-experience:has(.research-card:hover) .research-card:hover,
+#research .research-experience:has(.research-card:focus-within) .research-card:focus-within,
+#grants-awards .awards-list:has(.award-card:hover) .award-card:hover,
+#grants-awards .awards-list:has(.award-card:focus-within) .award-card:focus-within,
+#oral .presentation-list:has(.presentation-card:hover) .presentation-card:hover,
+#oral .presentation-list:has(.presentation-card:focus-within) .presentation-card:focus-within,
+#posters .presentation-list:has(.presentation-card:hover) .presentation-card:hover,
+#posters .presentation-list:has(.presentation-card:focus-within) .presentation-card:focus-within,
+#leadership .leadership-list:has(.leadership-card:hover) .leadership-card:hover,
+#leadership .leadership-list:has(.leadership-card:focus-within) .leadership-card:focus-within {
+  opacity: 1;
+  filter: none;
+  transform: scale(1.02);
+  z-index: 20;
+}
+
+#publications .carousel__slides:has(.publication-card:hover) .publication-card,
+#publications .carousel__slides:has(.publication-card:focus-within) .publication-card {
+  opacity: 0.28;
+  filter: blur(1px);
+  transform: scale(0.98);
+}
+
+#publications .carousel__slides:has(.publication-card:hover) .publication-card:hover,
+#publications .carousel__slides:has(.publication-card:focus-within) .publication-card:focus-within {
+  opacity: 1;
+  filter: none;
+  transform: scale(1.02);
+  z-index: 20;
+}
+
+/* Ensure cards have stacking context for dim effect */
+.research-card,
+.award-card,
+.presentation-card,
+.leadership-card,
+.publication-card {
+  position: relative;
+  transition: opacity 0.2s ease, filter 0.2s ease, transform 0.2s ease;
 }
 
 /* ===== Footer ===== */

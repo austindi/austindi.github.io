@@ -6,43 +6,65 @@
       <section id="introduction" class="hero">
         <div class="hero__inner">
           <div>
-            <div class="kicker">Data Engineer | AI Systems Builder | Scalable Data Platforms</div>
+            <div class="kicker">Building reliable data platforms, intelligent workflows, and AI-driven systems</div>
             <h1 class="h1">Hi, I’m Dave Austin, Ph.D.,</h1>
             <div class="hero__sub">
               <p>
-                I build data systems that turn unreliable operational data into trusted, decision-ready infrastructure.
-                I completed my PhD in Computational Physics at the University of Central Florida, where I built
-                large-scale computational workflows and data pipelines to support high-performance simulations and
-                analysis of complex materials systems. My work combined scientific modeling with automation, data
-                engineering, and reproducible computing practices across HPC environments.
+                I design systems that turn messy, unreliable data and complex workflows into reliable, decision-ready infrastructure. My work sits at the intersection of data engineering, AI-assisted automation, and scientific computing, focused on building systems that continue to operate correctly under real-world uncertainty.
+              </p>
+              <p>I build:</p>
+              <ul class="hero__sub-list">
+                <li>Reliable data platforms that tolerate inconsistent operational inputs and evolving schemas</li>
+                <li>AI-assisted systems that monitor workflows, detect failures, and guide recovery decisions</li>
+                <li>Automated pipelines that scale from research environments to production cloud systems</li>
+              </ul>
+              <p>
+                These systems have been developed across HPC supercomputers, cloud platforms, and production business environments where correctness, observability, and long-term reliability matter.
               </p>
               <p>
-                I currently work as a Software Engineer and Data Engineer at Bear Cognition, where I design and maintain
-                production data pipelines that transform diverse operational data into reliable, analytics-ready
-                datasets.
-                I develop cloud-based data systems with a focus on scalability, monitoring, and reliability, working
-                with
-                APIs, logistics data, and variable real-world inputs to build resilient ingestion and validation
-                workflows.
+                I currently work as a Software Engineer and Data Engineer at Bear Cognition, designing and operating production data pipelines that transform diverse operational data into trusted, analytics-ready datasets. My work focuses on scalability, monitoring, and validation, enabling teams to make decisions from data they can rely on.
               </p>
               <p>
-                Across both research and industry, I apply a scientific approach to engineering — emphasizing measurable
-                outcomes, systematic debugging, and systems built for long-term reliability.
+                Across both research and industry, I apply a scientific approach to engineering: measure outcomes, isolate failure modes, and build systems designed to remain stable as complexity grows.
               </p>
               <p>
-                My background in computational physics shaped how I design reliable, measurable data systems.
+                My background in computational physics shaped how I approach engineering problems, treating systems as experiments that must be observable, reproducible, and continuously improved.
               </p>
             </div>
             <div class="cta cta--centered">
               <NuxtLink to="/phd-overview" class="btn btn--primary">Scientific Background & Research Foundations</NuxtLink>
               <NuxtLink to="/blogs" class="btn">Blogs</NuxtLink>
-              <a href="/Resume.pdf" class="btn" download="dave_austin_resume.pdf">Download Resume</a>
+              <div ref="resumeDropdownRef" class="resume-dropdown">
+                <button
+                  type="button"
+                  class="btn"
+                  :class="{ 'resume-dropdown__trigger--open': resumeDropdownOpen }"
+                  :aria-expanded="resumeDropdownOpen"
+                  aria-haspopup="true"
+                  @click="resumeDropdownOpen = !resumeDropdownOpen"
+                >
+                  Download Resume <span class="resume-dropdown__caret">▾</span>
+                </button>
+                <div v-show="resumeDropdownOpen" class="resume-dropdown__menu" role="menu">
+                  <a
+                    v-for="opt in resumeOptions"
+                    :key="opt.label"
+                    :href="opt.path"
+                    class="resume-dropdown__item"
+                    role="menuitem"
+                    download
+                    @click="resumeDropdownOpen = false"
+                  >
+                    {{ opt.label }}
+                  </a>
+                </div>
+              </div>
             </div>
             <div class="pills">
-              <span class="pill">⚡ Data Platforms & Automation</span>
-              <span class="pill">☁ Cloud-Native Infrastructure</span>
-              <span class="pill">📊 AI & Decision Systems</span>
-              <span class="pill">🧩 End-to-End Data Engineering</span>
+              <span class="pill">⚡ Reliable Data Systems</span>
+              <span class="pill">🤖 AI-Assisted Automation</span>
+              <span class="pill">📊 Decision & Analytics Infrastructure</span>
+              <span class="pill">🔄 Workflow Orchestration at Scale</span>
             </div>
             <div v-if="showPrefectStats" class="prefect-stats-block">
               <PrefectStatsCard />
@@ -51,11 +73,11 @@
         </div>
       </section>
 
-      <!-- Systems I've Built -->
+      <!-- Representative Systems -->
       <section id="projects" class="section">
         <div>
           <div class="section__head">
-            <h2 class="section__title">Systems I've Built</h2>
+            <h2 class="section__title">Representative Systems</h2>
             <p class="section__desc">
               Selected work in data engineering, automation, and ML.
             </p>
@@ -84,35 +106,27 @@
               <h3 style="margin: 0">Data Engineer — Bear Cognition</h3>
               <p class="section__desc" style="font-size: 0.9rem; margin-top: 4px">April 2025 – Present</p>
               <ul class="timeline__bullets">
-                <li>Designed and deployed production data pipelines integrating APIs, databases, and event-driven
-                  sources into Snowflake using Prefect orchestration and Fivetran ingestion.</li>
-                <li>Built resilient transformation workflows handling inconsistent operational data, enabling reliable
-                  analytics and reporting across business teams.</li>
-                <li>Developed ML-assisted automation workflows for bid classification and commission processing,
-                  reducing manual review and improving processing throughput.</li>
-                <li>Implemented monitoring, retry logic, and failure diagnostics to improve pipeline reliability and
-                  surface actionable operational alerts.</li>
-                <li>Collaborated with engineering and operations stakeholders to translate business processes into
-                  scalable, automated data systems.</li>
+                <li>Architect and operate production data pipelines integrating APIs, partner systems, and event-driven sources into Snowflake using Prefect orchestration and automated ingestion frameworks.</li>
+                <li>Designed normalization and validation systems to stabilize highly inconsistent operational data, enabling reliable analytics and reporting across logistics, finance, and operations teams.</li>
+                <li>Built AI-assisted automation workflows for bid classification and commission processing, reducing manual review and increasing processing throughput.</li>
+                <li>Implemented observability, retry strategies, and failure diagnostics that surfaced actionable pipeline issues and improved overall workflow reliability.</li>
+                <li>Partner with engineering and business stakeholders to translate manual processes into scalable data systems supporting decision-making and operational execution.</li>
               </ul>
             </div>
             <div class="timeline__item">
-              <h3 style="margin: 0">Data Engineering/Computational Physics — University of Central Florida</h3>
-              <p class="section__desc" style="font-size: 0.9rem; margin-top: 4px">Aug 2018 – April 2025</p>
+              <h3 style="margin: 0">Data Engineering / Scientific Computing — University of Central Florida</h3>
+              <p class="section__desc" style="font-size: 0.9rem; margin-top: 4px">Aug 2018 – Apr 2025</p>
               <ul class="timeline__bullets">
-                <li>Designed and orchestrated large-scale HPC workflows using SLURM to manage distributed simulation
-                  workloads and high-volume computational datasets.</li>
-                <li>Developed Python tooling for automated data ingestion, validation, and post-processing of simulation
-                  outputs across multi-step research pipelines.</li>
-                <li>Built reproducible data workflows enabling reliable tracking, transformation, and analysis of large
-                  scientific datasets generated across compute clusters.</li>
-                <li>Optimized data movement and resource utilization to reduce runtime and improve throughput for
-                  thousands of simulation jobs.</li>
-                <li>Collaborated with international experimental and computational teams to translate raw simulation
-                  data into structured, analysis-ready datasets supporting peer-reviewed publications.</li>
+                <li>Designed and operated large-scale HPC workflow systems using SLURM to orchestrate distributed simulation workloads across national supercomputing environments.</li>
+                <li>Developed Python automation tooling for ingestion, validation, and post-processing of multi-stage computational outputs, transforming raw simulation artifacts into structured, analysis-ready datasets.</li>
+                <li>Built reproducible data pipelines that tracked configuration metadata, enabled automated regeneration of results, and supported reliable scientific analysis at scale.</li>
+                <li>Implemented monitoring, logging, and restart logic to detect failures, recover long-running jobs, and eliminate manual intervention across thousands of simulations.</li>
+                <li>Optimized compute utilization and data movement strategies, improving throughput and reducing delays in large experimental parameter studies.</li>
+                <li>Collaborated with international experimental and computational teams to translate complex scientific outputs into usable datasets supporting multiple peer-reviewed publications.</li>
               </ul>
-              <NuxtLink to="/phd-overview" class="btn" style="margin-top: 12px; display: inline-block">Learn more about
-                the science — click here</NuxtLink>
+              <div style="margin-top: 12px; text-align: center">
+                <NuxtLink to="/phd-overview" class="btn">Learn more about the science — click here</NuxtLink>
+              </div>
             </div>
             <div class="timeline__item">
               <h3 style="margin: 0">Technical Instruction & Communication — University of Central Florida</h3>
@@ -351,9 +365,31 @@ const education = [
 
 const showPrefectStats = true; // Set false to hide Task Runs card
 
+const resumeOptions = [
+  { label: "Data Engineering", path: "/Data_Engineering_Resume.pdf" },
+  { label: "Data Science / Analytics", path: "/Data_Science_Resume.pdf" },
+  { label: "AI / Solution Engineering", path: "/AI_Engineering_Resume.pdf" },
+];
+
+const resumeDropdownOpen = ref(false);
+const resumeDropdownRef = ref<HTMLElement | null>(null);
+
+function handleClickOutside(e: MouseEvent) {
+  if (resumeDropdownRef.value && !resumeDropdownRef.value.contains(e.target as Node)) {
+    resumeDropdownOpen.value = false;
+  }
+}
+
+onMounted(() => {
+  document.addEventListener("click", handleClickOutside);
+});
+onBeforeUnmount(() => {
+  document.removeEventListener("click", handleClickOutside);
+});
+
 const tocItems = [
   { id: "introduction", label: "Introduction" },
-  { id: "projects", label: "Systems I've Built" },
+  { id: "projects", label: "Representative Systems" },
   { id: "experience", label: "Experience" },
   { id: "skills", label: "Skills" },
   { id: "education", label: "Education" },
@@ -394,6 +430,51 @@ const tocItems = [
 
 .projects-toggle {
   margin-top: 20px;
+}
+
+.resume-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.resume-dropdown__caret {
+  display: inline-block;
+  margin-left: 4px;
+  opacity: 0.8;
+  transition: transform 0.2s ease;
+}
+
+.resume-dropdown__trigger--open .resume-dropdown__caret {
+  transform: rotate(180deg);
+}
+
+.resume-dropdown__menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 220px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 25%);
+  padding: 8px 0;
+  z-index: 100;
+}
+
+.resume-dropdown__item {
+  display: block;
+  padding: 10px 16px;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.resume-dropdown__item:hover {
+  background: var(--hover-bg);
+  color: var(--accent);
+  text-decoration: none;
 }
 
 .page-with-toc {
