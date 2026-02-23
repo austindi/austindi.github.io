@@ -236,11 +236,6 @@
               <p v-if="edu.date" class="section__desc" style="font-size: 0.9rem; margin-top: 4px">
                 {{ edu.date }}
               </p>
-              <p class="section__desc" style="font-size: 0.9rem; margin-top: 4px">
-                <a v-if="edu.diploma_link" :href="edu.diploma_link" target="_blank" rel="noopener noreferrer">View
-                  Diploma</a>
-                <span v-else class="diploma-placeholder">Diploma (add link)</span>
-              </p>
             </div>
           </div>
         </div>
@@ -362,9 +357,9 @@ const visibleProjects = computed(() =>
 );
 
 const education = [
-  { degree: "Ph.D. in Physics", institution: "University of Central Florida", field: "Computational physics, density functional theory", date: "Aug 2018 – Aug 2024", dissertation: "First Principles Studies of Nano-Scale Phenomena At Surfaces: From Characteristics of Single Atom Catalysts to Molecular Structure Formation", dissertation_link: "https://stars.library.ucf.edu/cgi/viewcontent.cgi?article=1500&context=etd2023", diploma_link: "" },
-  { degree: "M.S. in Physics", institution: "University of Central Florida", field: "", date: "Aug 2018 – May 2020", diploma_link: "" },
-  { degree: "B.S. in Physics", institution: "College of Charleston", field: "", date: "Aug 2014 – May 2018", diploma_link: "" },
+  { degree: "Ph.D. in Physics", institution: "University of Central Florida", field: "Computational physics, density functional theory", date: "Aug 2018 – Aug 2024", dissertation: "First Principles Studies of Nano-Scale Phenomena At Surfaces: From Characteristics of Single Atom Catalysts to Molecular Structure Formation", dissertation_link: "https://stars.library.ucf.edu/cgi/viewcontent.cgi?article=1500&context=etd2023" },
+  { degree: "M.S. in Physics", institution: "University of Central Florida", field: "", date: "Aug 2018 – May 2020" },
+  { degree: "B.S. in Physics", institution: "College of Charleston", field: "", date: "Aug 2014 – May 2018" },
 ];
 
 const showPrefectStats = true; // Set false to hide Task Runs card
@@ -403,11 +398,6 @@ const tocItems = [
 </script>
 
 <style scoped>
-.diploma-placeholder {
-  color: var(--muted);
-  font-style: italic;
-}
-
 .skills-card {
   padding: 18px;
 }
