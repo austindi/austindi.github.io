@@ -1,6 +1,14 @@
 {
   "have": [
     {
+      "name": "Databricks Academy - Generative AI Fundamentals",
+      "issuer": "Databricks Academy",
+      "date": "2026-03-03",
+      "link": "https://credentials.databricks.com/76f6494d-23a6-45fb-89ef-38c51b90d2c0#acc.K3mtVTXh",
+      "image": "databricks_genai_fundamentals.png",
+      "imageSize": "large"
+    },
+    {
       "name": "AWS Certified Cloud Practitioner",
       "issuer": "Amazon Web Services",
       "date": "2025-09-24",

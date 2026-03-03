@@ -10,9 +10,9 @@
           :href="c.link"
           target="_blank"
           rel="noopener noreferrer"
-          class="certs__badge certs__badge--have"
+          :class="['certs__badge', 'certs__badge--have', c.imageSize === 'large' && 'certs__badge--large-img']"
         >
-          <img :src="imageUrl(c.image)" :alt="c.name" class="certs__img" />
+          <img :src="imageUrl(c.image)" :alt="c.name" :class="['certs__img', c.imageSize === 'large' && 'certs__img--large']" />
           <span class="certs__name">{{ c.name }}</span>
           <span v-if="c.date" class="certs__meta">{{ c.date }}</span>
         </a>
@@ -46,6 +46,7 @@ interface Cert {
   issuer?: string;
   date?: string;
   link?: string;
+  imageSize?: string;
 }
 
 interface CertsData {
@@ -161,6 +162,10 @@ onMounted(async () => {
   border-color: var(--border-hover);
 }
 
+.certs__badge--large-img {
+  width: 160px;
+}
+
 .certs__badge--greyed {
   opacity: 0.9;
   padding: 10px;
@@ -216,6 +221,11 @@ onMounted(async () => {
   object-fit: contain;
   border-radius: 8px;
   display: block;
+}
+
+.certs__img--large {
+  height: 100px;
+  width: auto;
 }
 
 .certs__name {
